@@ -1,15 +1,499 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ChangeListManager">
+    <list default="true" id="bd4a0615-a904-4363-9e05-1bcfa70debe4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nowy dokument tekstowy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/css/blk-design-system-react.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/css/blk-design-system-react.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/css/blk-design-system-react.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/css/nucleo-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/demo/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/nucleo.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/nucleo.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/nucleo.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/nucleo.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/apple-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/asc.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/bitcoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/blob.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/cercuri.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/chester-wade.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/denys.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/desc.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/dots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/etherum.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/fabien-bazanegue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/github.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/google.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/img_3115.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/james.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/julie.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/landing-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/lora.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/mark-finn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/mike.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/nucleo-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/path1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/path2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/path3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/path4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/path5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/patrat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/profile-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/ripp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/ryan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/square-purple-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/square1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/square2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/square3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/square4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/square5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/square6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/triunghiuri.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/waves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_jumbotron.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_print.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_size.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_table-row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_text-hide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/mixins/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_borders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_embed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_shadows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/bootstrap/utilities/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_alerts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_checkboxes-radio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_example-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_fixed-plugin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_info-areas.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_misc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_pills.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_rtl.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_sections.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_tabs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/cards/_card-chart.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/cards/_card-map.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/cards/_card-plain.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/cards/_card-register.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/cards/_card-stats.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/cards/_card-task.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/cards/_card-user.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_badges.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_icon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_modals.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_page-header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_popovers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_vendor-prefixes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/_wizard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/mixins/opacity.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_blogs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_contactus.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_features.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_headers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_pricing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_projects.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_social-subscribe-lines.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_team.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/sections/_testimonials.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_backgrounds.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_floating.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_helper.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_shadows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/utilities/_transform.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/vendor/_plugin-animate-bootstrap-notify.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/vendor/_plugin-bootstrap-switch.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/vendor/_plugin-datetimepicker.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/vendor/_plugin-nouislider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/custom/vendor/_plugin-perfect-scrollbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_alerts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_badges.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_checkboxes-radio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_example-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_sections.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/plugins/_plugin-react-datetime.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scss/blk-design-system-react/react/react-differences.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbars/ExamplesNavbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbars/IndexNavbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PageHeader/PageHeader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/variables/charts.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Basics.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Download.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Examples.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/JavaScript.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Navbars.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Notifications.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/NucleoIcons.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Pagination.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Signup.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Tabs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/IndexSections/Typography.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/examples/LandingPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/examples/ProfilePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/examples/RegisterPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>start</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="96" />
     <option name="width" value="959" />
     <option name="height" value="728" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="projektreacy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projektreacy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projektreacy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projektreacy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="D:/Pobieranie/react-0.14.3/build/react.js" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd4a0615-a904-4363-9e05-1bcfa70debe4" name="Default Changelist" comment="" />
+      <created>1559725656887</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559725656887</updated>
+      <workItem from="1559725658449" duration="4035000" />
+      <workItem from="1559765319783" duration="43000" />
+      <workItem from="1559765745558" duration="291000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4369000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="71" y="-8" width="1297" height="784" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32868218" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32868218" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32868218" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-301" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="3774" column="32" selection-start-line="3774" selection-start-column="32" selection-end-line="3774" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/.bin/react-scripts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logo.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3012">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../blk-design-system-react-master/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
