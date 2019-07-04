@@ -1,33 +1,325 @@
-.App {
-  text-align: center;
+body {
+    background: linear-gradient(#1e1e2f, #1e1e24);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+progress-wyglad {
+    width: 25%;
 }
+
+.App {
+    text-align: center;
+    background: linear-gradient(#1e1e2f, #1e1e24);
+}
+
+.test {
+    color: #e500ff;
+}
+
+
+.color-copyright {
+    color: #ffa3ef;
+}
+
+pre {
+    color: white;
+}
+
+.color-background-dark_pink {
+    background: linear-gradient(#121220, #630e61);
+    color: #ff9df9;
+}
+
+.color-background-dark {
+    background: linear-gradient(#121220, #121220);
+}
+
+.color-background-pink-dark {
+    background: linear-gradient(#630e61, #121220);
+}
+
+.progress-color {
+    background: linear-gradient(#630e61, #121220);
+}
+
+.text-color-pink {
+    color: #BA54F5;
+
+}
+
+.text-color-white-pink {
+    color: #e5a3f5;
+}
+
+.header-right:hover {
+    color: #e14eca;
+}
+
+ModalHeader {
+    background: linear-gradient(#1e1e2f, #1e1e24);
+}
+
+
+input[type="password"] {
+    margin-left: 5px;
+    width: 95%;
+    border: 2px solid #6e006e;
+    border-radius: 30px;
+    background: transparent;
+    color: #f0ffff;
+}
+
+input[type="password"]:hover {
+    color: #f9d7ff;
+    border: 2px solid #9b009b;
+    border-radius: 30px;
+    background: transparent;
+}
+
+input[type="password"]:focus {
+    color: #f8b6ff;
+    border: 2px solid #e600e6;
+    border-radius: 30px;
+    background: transparent;
+}
+
+input[type="text"] {
+    margin-left: 5px;
+    width: 95%;
+    border: 2px solid #6e006e;
+    border-radius: 30px;
+    background: transparent;
+    color: #f0ffff;
+
+}
+
+input[type="text"]:hover {
+    color: #f9d7ff;
+    border: 2px solid #9b009b;
+    border-radius: 30px;
+    background: transparent;
+}
+
+input[type="text"]:focus {
+    color: #f8b6ff;
+    border: 2px solid #e600e6;
+    border-radius: 30px;
+    background: transparent;
+}
+
+
+.selected {
+    height: 60%;
+    color: #f9d7ff;
+    border: 2px solid #9b009b;
+    border-radius: 30px;
+    background: transparent;
+}
+
+.selected:hover {
+    height: 60%;
+    color: #f9d7ff;
+    border: 2px solid #9b009b;
+    border-radius: 30px;
+    background: transparent;
+}
+
+.selected:focus {
+    color: #f8b6ff;
+    border: 2px solid #e600e6;
+    border-radius: 30px;
+    background: transparent;
+}
+
+
+.rightnav {
+    color: #938d90;
+    float: right;
+}
+
+Stepper {
+    background-color: red;
+}
+
+a:link, a:visited {
+    color: #ba54f5;
+    text-decoration: none;
+}
+
+a:hover, a:visited:hover {
+    color: #e14eca;
+    text-decoration: none;
+}
+
+.logo {
+    width: 15%;
+    margin-top: 15%;
+    margin-right: 15%;
+}
+
+.img-price {
+    margin-top: 15%;
+}
+
+.main-text {
+    margin-top: 18%;
+    margin-left: 10%;
+    float: left;
+    color: red;
+}
+
+.Site_Text_left {
+    margin-top: 1%;
+    width: 100%;
+    float: left;
+    background: linear-gradient(#1e1e2f, #1e1e24);
+
+}
+
+.navsd {
+    margin-left: 40%;
+    margin-right: 28%;
+}
+
+.main-body {
+    height: auto;
+    background: linear-gradient(#1e1e2f, #1e1e24);
+}
+
+.main-body2 {
+    margin-top: 80px;
+    height: auto;
+    width: auto;
+    background: linear-gradient(#1e1e2f, #1e1e24);
+}
+
+.left-menu-regulamin {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+b {
+    color: #f5eaf1;
+}
+
+.right-menu-regulamin {
+    margin-right: 25px;
+}
+
+.tabulator {
+    text-indent: 40px;
+}
+
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile {
+    margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+    padding: 20px 0 10px 0;
+    margin: auto;
+
+}
+
+.profile-userpic img {
+    float: none;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+}
+
+.profile-usertitle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-usertitle-name {
+    color: #917690;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+    text-transform: uppercase;
+    color: #d10fa6;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Profile Content */
+.profile-content {
+    padding: 20px;
+    min-height: 460px;
+}
+
+.left-menu-user {
+    margin-left: 15%;
+    margin-right: 20%;
+}
+
+.postep{
+    width: 50%;
+    margin-left: -1%;
+    background-color: red;
+}
+
+.pasek-postepu{
+
+ }
+.pasek-procenty{
+    margin-top: 5%;
+}
+
+.progresik{
+    width: 100%;
+
+}
+
+.blockquote-skills{
+    width: 48%;
+    float: left;
+}
+
+.blockquote-date{
+    margin-top: -8px;
+    margin-right: 2%;
+    width: 48%;
+    float: right;
+}
+
+.date-user{
+    margin-top: -15px;
+}
+
+.li-work{
+    margin-left: 5px;
 }

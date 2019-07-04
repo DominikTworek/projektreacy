@@ -1,29 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import { Nav, NavItem, NavLink } from 'reactstrap';
 import "components/Navbars/IndexNavbar.jsx";
+import "assets/css/blk-design-system-react.css";
+import "assets/css/nucleo-icons.css"
+import Regulamin from './components/regulamin/regulamin';
+import MainPage from './components/mainpage/mainpage';
+import User from './components/user/user';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 
-function App() {
-  return (
-    <div className="App">
-      <Nav className="justify-content-right">
-        <NavItem>
-          <NavLink href="#">Link</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#">Link</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#">Another Link</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink disabled href="#">Disabled Link</NavLink>
-        </NavItem>
-      </Nav>
-    </div>
-  );
+class Site extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div className="App">
+
+                    <div className="main-body2">
+                        <Switch>
+                            <Route exact path='/' component={MainPage}/>
+                            <Route path='/user' component={User}/>
+                            <Route path='/regulamin' component={Regulamin}/>
+                        </Switch>
+                    </div>
+                    <footer className="page-footer font-small ">
+                        <div className="footer-copyright text-center py-3 color-copyright">© 2019 Copyright:
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a href="#"> Student Kielce</a>
+                        </div>
+                    </footer>
+                </div>
+            </BrowserRouter>
+        );
+    }
 }
 
-export default App;
+export default Site;
