@@ -6,7 +6,7 @@ import "assets/css/nucleo-icons.css"
 import Regulamin from './components/regulamin/regulamin';
 import MainPage from './components/mainpage/mainpage';
 import User from './components/user/user';
-import Test from './components/test/test';
+import Register from './components/register/register';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 
@@ -21,7 +21,7 @@ class Site extends Component {
                             <Route exact path='/' component={MainPage}/>
                             <Route path='/user' component={User}/>
                             <Route path='/regulamin' component={Regulamin}/>
-                            <Route path='/test' component={Test}/>
+                            <Route path='/register' component={Register}/>
                         </Switch>
                     </div>
                     <footer className="page-footer font-small ">

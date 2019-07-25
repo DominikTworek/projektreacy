@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import logo from "../../logo.png";
 import price from "../../price.png";
-import {PostData} from "../../services/PostData";
 import {
     Button,
     Card,
@@ -24,13 +23,9 @@ class MainPage extends Component {
             plainTabs: 1,
             modalMini: false,
             modalLarge: false,
-            LoginLogin:'',
-            LoginPassword:'',
         };
         this.toggleModalMini = this.toggleModalMini.bind(this);
         this.toggleModalLarge = this.toggleModalLarge.bind(this);
-        this.login = this.login.bind(this);
-        this.onChange = this.onChange.bind(this);
     }
 
     toggleModalMini() {
@@ -52,18 +47,6 @@ class MainPage extends Component {
         });
     };
 
-    login(){
-        PostData('login', this.state).then((result) =>{
-           let responseJSON = result;
-           console.log(responseJSON);
-        });
-    }
-
-    onChange(e){
-        this.setState({[e.target.name]: e.target.value});
-        console.log(this.state);
-    }
-
     render() {
         function classnames(param) {
             return "#BA54F5";
@@ -77,7 +60,6 @@ class MainPage extends Component {
                         <div className="rightnav">
                             <Nav className="justify-content-right">
                                 <NavItem>
-
                                     <text onClick={this.toggleModalMini}>
                                         <NavLink href="#">Logowanie</NavLink>
                                     </text>
@@ -109,7 +91,7 @@ class MainPage extends Component {
                                                         />
 
                                                     </FormGroup>
-                                                    <Button type="submit" value="login"  color="primary" onClick={this.login}>
+                                                    <Button type="submit" value="login"  color="primary" onClick={this.onSubminLogin}>
                                                         Zaloguj
                                                     </Button>
                                                 </form>
@@ -130,8 +112,12 @@ class MainPage extends Component {
                                             <CardBody className="color-background-dark_pink">
                                                 <form>
                                                     <FormGroup>
-                                                        <Label for="LoginRegister">Login</Label>
-                                                        <Input type="text" id="LoginRegister" placeholder="Login"/>
+                                                        <Label for="LoginRegister">Email</Label>
+                                                        <Input
+                                                            type="text"
+                                                            id="LoginRegister"
+                                                            placeholder="Email"
+                                                        />
                                                     </FormGroup>
                                                     <div className="form-row">
                                                         <FormGroup className="col-md-6">
@@ -175,7 +161,8 @@ class MainPage extends Component {
                                                         </FormGroup>
                                                         <FormGroup className="col-md-2">
                                                             <Label for="inputZip">Zip</Label>
-                                                            <Input type="text" id="inputZip" placeholder="00-000"/>
+                                                            <Input
+                                                                type="text" id="inputZip" placeholder="00-000"/>
                                                         </FormGroup>
                                                     </div>
                                                     <FormGroup check>

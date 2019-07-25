@@ -323,3 +323,10 @@ b {
 .li-work{
     margin-left: 5px;
 }
+
+.register-body{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+    color: #d364bf;
+}
