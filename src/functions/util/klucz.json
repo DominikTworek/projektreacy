@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "projekt-studia",
+  "private_key_id": "ff0f0d3cda9a2bac0a1954b496d4803d934a17da",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+DiQ3SpNehHXa\nKG3WK1C7/ZBM4aSRvEO29tMhdQ0ZVEJjz3Uzr1V5CKAB0E7Hn6VAb5UNqgTzB5ck\n7bT7MkMsIzlumNnm3dWQA/dXfaeWdYJFwp9snAaaz3WJF9r6a4/ZjmZZToRKDrp3\n6qSGrlP6XZ884xUjlcIze9ZlikcsynAXxOjWbah0gTSm0LVejMz1p1IkQ3sn4JC4\nBDjf6L0/Ba04/RTAZscMPoZskKI7oxcDtwmVM9oi7BrpsFUGJXi/FN/asgR4SFYI\nSoU8gc+zX5+WVYMvj8oRtNI19/JMOVPJ3V3/VFuJ+9qPydNpceAF2M4AoO5+0lP1\nzk8uY1ppAgMBAAECggEANJdHMEGjq/jtf7PGSQhta8fLoWqjFmzJNBzy6YQxXrvx\nLxteLDItbbOUS0wwMI8dtEnsLf7JJdMI4QAiH4yWB+WrY85KJddm3FYsoHo14K2d\nod4sLWqzbS1RMeF3B+qxwJrl+Xp/otqWgM5ePqKIvHQht0CDPfiX55UyC6EK9vqG\nbV40qAsGxZo24dCfACbZFHqBBjUnEkVksHbyq2kZ7zr8eZTw8ZiVrazoNxBL6r8b\nv6fw4GSaf80KD0ZByPxc6SIGmfeIYMkf0xE1NAtz9txZvm1sxxuVGxtMKO+vBNYh\nHj+kvIC4omqFm8WQgkSS7LiWXJxO8yKofAQzqckuHQKBgQD9iLqC3GtDuK5cHrgO\nYM0bJr5Z8JTXpPNlc5fAr/nJ43Q7NbS/hswqqdRoemy2iaGxwS0UXNpOtvdEVe7B\nzANj/KT2kjCq2vnNPsOs6PnhJtI8QKMi22y+1k1XL4PKijlRTEyOvCbhyHgGVAcd\niv0YKGZ5M5j+44z9sCOU/aoDMwKBgQC/51uRJ64it312mykO4GrLqi9nLLEs/A1i\nEab+dPcwj75IddvtESc0sjhYIkUUjCUhk0nux0HGMkwxL4LwpUnKtlcgb5dv8So3\n7RI9ewFRdTapqmDdlvHJ9mI5u9ndPo+EZd4gBR2e+pIvXUxwj2AOIc4LRBtomwlR\n1IAkjqRr8wKBgDyHDe/762fJiWbYtpxII+9deohCVWZ+LNWFmS8ZVAsM0Ezqb3Ji\nHg/5Z4ph395cUUv8kGSSHlQ4fiPEWDHQIOcYA9IR6KiBiq2jVFfNbwp/mCVmUQwb\nUoTk6KXt5ArQoQp1qrlQ1f+FOpJYMTKuYeoIix5YYShI7voJuRTy0kndAoGAa23J\nBOmBwk2WHt+djIZ1Qq5y+v858ETp+QyIv8oa10Sg8U+JXp1LpWRfxnbo1SffYXxi\n1xkU6S8fGCnQ04a0WJbbD31o+XG4gLZmj6RciI1lnHWU5Herw7P6KPfQbtqm3Sdp\nweMbQfRkAb/pGtoom8Cw5/2omlawUO71DYIM6aECgYEAjvhUqkjS8cB2QzZV74Xm\nfEXYE68RM10i45iXNMuJoXJvOlC2fGVLjRZrDBnPT+RXh66q+6ua6NF2Q/vqqJje\n+Uxlynl7m5DTF1pD5ugm1wQNKXMmEYBM6eQReVsa4Mr9E1q192NsyCtbxX6Vz0pK\nHpVqm27DJ6Ck3FX0WAF7giI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-af5qa@projekt-studia.iam.gserviceaccount.com",
+  "client_id": "104885732924414924189",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-af5qa%40projekt-studia.iam.gserviceaccount.com"
+}
