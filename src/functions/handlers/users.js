@@ -2,24 +2,13 @@ const {db, admin} = require('../util/admin');
 const {firebase} = require('../util/firebase');
 const config = require('../util/config');
 
-const {validateSignUpData, validateLoginData} = require('../util/validators');
+const {validateSignUpData, validateLoginData, reduceUserDetails} = require('../util/validators');
 
 exports.signup = (req, res) => {
     const newUser = {
         email: req.body.email,
         password: req.body.password,
         confirmPassword: req.body.confirmPassword,
-        name: req.body.name,
-        surname: req.body.surname,
-        company: req.body.company,
-        city: req.body.city,
-        province: req.body.province,
-        zip: req.body.zip,
-        type: "basic",
-        salary: "Brak Danych",
-        performance: "Brak Danych",
-        role: "Admin",
-        admin: "Admin",
         handle: req.body.handle,
     };
 
@@ -50,16 +39,8 @@ exports.signup = (req, res) => {
                 handle: newUser.handle,
                 email: newUser.email,
                 createdAt: new Date().toISOString(),
-                name: newUser.name,
-                surname: newUser.surname,
-                company: newUser.company,
-                city: newUser.city,
-                province: newUser.province,
-                zip: newUser.zip,
-                type: newUser.type,
-                salary: newUser.salary,
-                performance: newUser.salary,
-                role: newUser.admin,
+                type: "Basic",
+                role: "Admin",
                 imageUrl: `https://firebasestorage.googleapis.com/v0/b/${
                     config.storageBucket
                     }/o/${noImage}?alt=media`,
@@ -75,7 +56,7 @@ exports.signup = (req, res) => {
             if (err.code === 'auth/email-already-in-use') {
                 return res.status(400).json({email: 'Email jest już w użyciu'});
             } else {
-                return res.status(500).json({error: err.code});
+                return res.status(500).json({general: 'Coś poszło nie tak, spróbuj ponownie'});
             }
         })
 };
@@ -85,11 +66,12 @@ exports.login = (req, res) => {
         email: req.body.email,
         password: req.body.password
     };
-
     const {valid, errors} = validateLoginData(user);
     if (!valid) return res.status(400).json(errors);
 
-    firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+    firebase
+        .auth()
+        .signInWithEmailAndPassword(user.email, user.password)
         .then(data => {
             return data.user.getIdToken();
         })
@@ -98,14 +80,43 @@ exports.login = (req, res) => {
         })
         .catch(err => {
             console.error(err);
-            if (err.code === 'auth/wrong-password') {
-                return res.status(403).json({general: "Zły login lub hasło, proszę spróbuj ponownie"});
-            }
-            if (err.code === 'auth/user-not-found') {
-                return res.status(403).json({general: "Zły login lub hasło, proszę spróbuj ponownie"});
-            }
-            return res.status(500).json({error: err.code});
+                return res
+                    .status(403)
+                    .json({general: "Zły login lub hasło, proszę spróbuj ponownie"});
+        });
+};
+
+exports.addUserDetails = (req, res) => {
+    let userDetails = reduceUserDetails(req.body);
+    db.doc(`/users/${req.user.handle}`).update(userDetails)
+        .then(() => {
+            return res.json({message: 'Dane zostały poprawnie dodane'})
         })
+        .catch(err => {
+            console.log(err);
+            return res.stack(500).json({error: err.code});
+        })
+};
+
+exports.getUserDetails = (req, res) => {
+    let userData = {};
+    db.doc(`/users/${req.user.handle}`).get()
+        .then((doc) => {
+            if (doc.exists) {
+                userData.credentials = doc.data();
+                return db
+                    .collection('workers')
+                    .where('userHandle', '==', req.user.handle).get();
+            }
+        })
+        .then((data) => {
+            userData.workers = [];
+            data.forEach((doc) => {
+                userData.workers.push(doc.data());
+            });
+            return res.json(userData);
+        })
+
 };
 
 exports.uploadImage = (req, res) => {
@@ -114,7 +125,7 @@ exports.uploadImage = (req, res) => {
     const os = require('os');
     const fs = require('fs');
 
-    const busboy = new BusBoy({ headers: req.headers });
+    const busboy = new BusBoy({headers: req.headers});
 
     let imageToBeUploaded = {};
     let imageFileName;
@@ -122,14 +133,14 @@ exports.uploadImage = (req, res) => {
     busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
         console.log(fieldname, file, filename, encoding, mimetype);
         if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
-            return res.status(400).json({ error: 'Błędne zdjęcie' });
+            return res.status(400).json({error: 'Błędne zdjęcie'});
         }
         const imageExtension = filename.split('.')[filename.split('.').length - 1];
         imageFileName = `${Math.round(
             Math.random() * 1000000000000
         ).toString()}.${imageExtension}`;
         const filepath = path.join(os.tmpdir(), imageFileName);
-        imageToBeUploaded = { filepath, mimetype };
+        imageToBeUploaded = {filepath, mimetype};
         file.pipe(fs.createWriteStream(filepath));
     });
     busboy.on('finish', () => {
@@ -148,7 +159,7 @@ exports.uploadImage = (req, res) => {
                 const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
                     config.storageBucket
                     }/o/${imageFileName}?alt=media`;
-                return db.doc(`/users/${req.user.handle}`).update({ imageUrl });
+                return db.doc(`/users/${req.user.handle}`).update({imageUrl});
             })
             .then(() => {
                 return res.json({message: 'Zdjęcie zostało poprawnie dodane'});

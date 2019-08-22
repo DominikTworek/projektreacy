@@ -6,9 +6,10 @@ import "assets/css/nucleo-icons.css"
 import Regulamin from './components/regulamin/regulamin';
 import MainPage from './components/mainpage/mainpage';
 import User from './components/user/user';
-import Register from './components/register/register';
+import SignUp from './components/Register/rejestracja.jsx';
+import Login from './components/Login/login.js';
+import Test from './components/Login/test.js';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-
 
 class Site extends Component {
     render() {
@@ -21,7 +22,9 @@ class Site extends Component {
                             <Route exact path='/' component={MainPage}/>
                             <Route path='/user' component={User}/>
                             <Route path='/regulamin' component={Regulamin}/>
-                            <Route path='/register' component={Register}/>
+                            <Route path='/login' component={Login}/>
+                            <Route path='/signup' component={SignUp}/>
+                            <Route path='/test' component={Test}/>
                         </Switch>
                     </div>
                     <footer className="page-footer font-small ">

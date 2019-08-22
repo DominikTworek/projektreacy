@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// reactstrap components
 import {
   Collapse,
   NavbarBrand,
@@ -13,7 +12,7 @@ import {
   Col
 } from "reactstrap";
 
-class PagesNavbar extends React.Component {
+class RegisterNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -72,21 +71,17 @@ class PagesNavbar extends React.Component {
             <NavbarBrand
               data-placement="bottom"
               to="/"
-              rel="noopener noreferrer"
-              title="Designed and Coded by Creative Tim"
               tag={Link}
             >
-              <span>BLK• </span>
-              Design System React
+              <span>DAPS• </span>
+              Student Project
             </NavbarBrand>
             <button
               aria-expanded={this.state.collapseOpen}
               className="navbar-toggler navbar-toggler"
               onClick={this.toggleCollapse}
             >
-              <span className="navbar-toggler-bar bar1" />
-              <span className="navbar-toggler-bar bar2" />
-              <span className="navbar-toggler-bar bar3" />
+
             </button>
           </div>
           <Collapse
@@ -98,12 +93,7 @@ class PagesNavbar extends React.Component {
           >
             <div className="navbar-collapse-header">
               <Row>
-                <Col className="collapse-brand" xs="6">
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
-                    BLK•React
-                  </a>
-                </Col>
-                <Col className="collapse-close text-right" xs="6">
+                <Col className="collapse-close text-right">
                   <button
                     aria-expanded={this.state.collapseOpen}
                     className="navbar-toggler"
@@ -115,50 +105,9 @@ class PagesNavbar extends React.Component {
               </Row>
             </div>
             <Nav navbar>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://twitter.com/CreativeTim"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Follow us on Twitter"
-                >
-                  <i className="fab fa-twitter" />
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-              </NavItem>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://www.facebook.com/CreativeTim"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Like us on Facebook"
-                >
-                  <i className="fab fa-facebook-square" />
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-              </NavItem>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://www.instagram.com/CreativeTimOfficial"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Follow us on Instagram"
-                >
-                  <i className="fab fa-instagram" />
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-              </NavItem>
               <NavItem>
                 <NavLink tag={Link} to="/">
-                  Back to Kit
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/creativetimofficial/blk-design-system-react/issues">
-                  Have an issue?
+                  Wróć do strony głównej
                 </NavLink>
               </NavItem>
             </Nav>
@@ -169,4 +118,4 @@ class PagesNavbar extends React.Component {
   }
 }
 
-export default PagesNavbar;
+export default RegisterNavbar;

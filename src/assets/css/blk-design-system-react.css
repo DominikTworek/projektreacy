@@ -4404,7 +4404,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: transparent; }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4424,7 +4424,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: transparent; }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4441,7 +4441,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: transparent; }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4470,7 +4470,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: transparent; }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -11417,7 +11417,7 @@ code {
 .input-group-append .input-group-text,
 .input-group-prepend .input-group-text {
   background-color: transparent;
-  border: 1px solid #2b3553;
+  border: 1px solid #ff4244;
   border-radius: 0.4285rem;
   color: #ffffff;
   -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -11450,19 +11450,12 @@ code {
   .input-group-prepend .input-group-text i {
     width: 17px; }
 
-.input-group-prepend .input-group-text,
-.input-group-prepend .input-group-text {
-  background-color: transparent;
-  border: 1px solid #2b3553;
-  border-radius: 0.4285rem;
-  color: #ffffff;
-  margin: 0; }
+
 
 .input-group-append .input-group-text {
   border-left: none; }
 
-.input-group-prepend .input-group-text {
-  border-right: none; }
+
 
 .input-group-focus .input-group-prepend .input-group-text,
 .input-group-focus .input-group-append .input-group-text {

@@ -1,6 +1,7 @@
 const {db} = require('../util/admin');
 const {validateWorkerData} = require('../util/validators');
 const {firebase} = require('../util/firebase');
+const config = require('../util/config');
 
 exports.newWorker =  (req, res) => {
     const newWorker = {
@@ -9,14 +10,9 @@ exports.newWorker =  (req, res) => {
         confirmPassword: req.body.confirmPassword,
         name: req.body.name,
         surname: req.body.surname,
-        company: "Brak",
-        city: req.body.city,
-        province: req.body.province,
-        zip: req.body.zip,
-        type: "Brak",
+        title: req.body.title,
         salary: req.body.salary,
         performance: req.body.performance,
-        role: "Worker",
         admin: req.user.handle,
         handle: req.body.handle,
     }
@@ -24,8 +20,10 @@ exports.newWorker =  (req, res) => {
     const {valid, errors} = validateWorkerData(newWorker);
     if(!valid) return res.status(400).json(errors);
 
+    const noImage = 'user.png';
+
     let token, userId;
-    db.doc(`/workers/${newWorker.handle}`)
+    db.doc(`/users/${newWorker.handle}`)
         .get()
         .then((doc) => {
             if (doc.exists) {
@@ -48,15 +46,18 @@ exports.newWorker =  (req, res) => {
                 createdAt: new Date().toISOString(),
                 name: newWorker.name,
                 surname: newWorker.surname,
-                city: newWorker.city,
-                province: newWorker.province,
-                zip: newWorker.zip,
+                title: newWorker.title,
+                type: "Brak",
                 salary: newWorker.salary,
                 performance: newWorker.performance,
+                role: "Worker",
                 admin: newWorker.admin,
+                imageUrl: `https://firebasestorage.googleapis.com/v0/b/${
+                    config.storageBucket
+                    }/o/${noImage}?alt=media`,
                 userId
             };
-            db.doc(`/workers/${newWorker.handle}`).set(userCredentials);
+            db.doc(`/users/${newWorker.handle}`).set(userCredentials);
         })
         .then(() => {
             return res.status(201).json({token});

@@ -1,0 +1,210 @@
+
+.margin-karty{
+    margin-left: 5px;
+}
+.card-register {
+    overflow: hidden;
+    text-align: left;
+    z-index: 2;
+}
+
+.card-register .card-header img {
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -150px;
+    border-radius: 20%;
+    width: 350px;
+}
+
+
+.card-register .form-check {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.card-register .card-header .card-title {
+    position: relative;
+    font-size: 3.5em;
+    font-weight: 900;
+    color: #222a42;
+    text-transform: lowercase;
+    margin-left: -5px;
+    z-index: 1;
+}
+
+.card-register .card-img {
+    position: absolute;
+    left: 0;
+    top: -17%;
+    width: 70%;
+}
+
+
+
+.card-register .card-footer {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+@media (max-width: 991.98px) {
+    .card.card-register .card-img {
+        margin-left: -45px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .card.card-register {
+        margin-top: 50px;
+    }
+}
+
+
+.cardd {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: linear-gradient(#121220, #630e61);
+    background-clip: border-box;
+    border: 0.0625rem solid rgba(34, 42, 66, 0.05);
+    border-radius: 0.2857rem;
+}
+
+.cardd .card-header {
+    padding: 15px 15px 0;
+    margin-bottom: 3em;
+    border: 0;
+}
+
+.cardd .card-header:not([data-background-color]) {
+    background-color: transparent;
+}
+
+.card .card-header .card-title {
+    color: #ffffff;
+    font-size: 4px;
+}
+
+.cardd label {
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+}
+
+.cardd .card-footer {
+    background-color: transparent;
+    border: 0;
+    padding: 0px 15px 0;
+}
+
+
+
+
+.register-page .square {
+    position: absolute;
+    transition: 0.5s ease-out;
+    border-radius: 2px;
+    background-size: 100%;
+    border-radius: 20%;
+    background: #ba54f5;
+}
+
+.section-signup .square {
+    background-size: cover; }
+
+.square-7 {
+    height: 200px;
+    width: 200px;
+    background-image: url("../../assets/img/square5.png");
+    left: -100px;
+    top: 100px;
+    opacity: .4;}
+
+.square-8 {
+    height: 100px;
+    width: 100px;
+    background-image: url("../../assets/img/square1.png");
+    left: 300px;
+    top: 400px;
+    opacity: .4;}
+
+.square-1 {
+    height: 300px;
+    width: 300px;
+    background-image: url("../../assets/img/square1.png");
+    top: 175px;
+    right: 150px;
+    opacity: 0.8; }
+.square-2 {
+    height: 120px;
+    width: 120px;
+    background-image: url("../../assets/img/square2.png");
+    opacity: 0.9;
+    top: 310px;
+    right: 390px; }
+.square-3 {
+    width: 200px;
+    height: 200px;
+    background-image: url("../../assets/img/square3.png");
+    opacity: 0.3;
+    top: -50px;
+    right: 400px; }
+.square-4 {
+    height: 200px;
+    width: 200px;
+    background-image: url("../../assets/img/square4.png");
+    right: -50px;
+    top: 525px; }
+.square-5 {
+    height: 150px;
+    width: 150px;
+    background-image: url("../../assets/img/square5.png");
+    opacity: 0.5;
+    top: 500px;
+    right: 470px; }
+.square-6 {
+    height: 70px;
+    width: 70px;
+    background-image: url("../../assets/img/square5.png");
+    opacity: 0.9;
+    top: 105px;
+    right: 20px; }
+.square-7 {
+    height: 200px;
+    width: 200px;
+    background-image: url("../../assets/img/square5.png");
+    left: -100px;
+    top: 100px;
+    opacity: .4; }
+
+.square {
+    background: #ba54f5;
+    background: -webkit-linear-gradient(0deg, #ba54f5 0%, #e14eca 100%);
+    background: -o-linear-gradient(0deg, #ba54f5 0%, #e14eca 100%);
+    background: -moz-linear-gradient(0deg, #ba54f5 0%, #e14eca 100%);
+    background: linear-gradient(0deg, #ba54f5 0%, #e14eca 100%); }
+
+
+.page-header {
+    min-height: 100vh;
+    max-height: 999px;
+    padding: 0;
+    position: relative;
+    overflow: hidden; }
+.page-header > .content {
+    margin-top: 11%;
+    text-align: center;
+    margin-bottom: 50px; }
+
+
+
+.input-group-prepend .input-group-text,
+.input-group-prepend .input-group-text {
+    background-color: transparent;
+    border: 1px solid #c724c7;
+    border-radius: 0.4285rem;
+    color: #ffffff;
+    margin: 0; }
+
+.input-group-prepend .input-group-text {
+    border-right: none; }

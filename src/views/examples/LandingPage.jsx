@@ -17,7 +17,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.jsx";
+import ExamplesNavbar from "components/Navbars/RegisterNavbar.jsx";
 import Footer from "components/Footer/Footer.jsx";
 
 import bigChartData from "variables/charts.jsx";

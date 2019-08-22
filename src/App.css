@@ -2,6 +2,11 @@ body {
     background: linear-gradient(#1e1e2f, #1e1e24);
 }
 
+button{
+    background-color: transparent;
+
+}
+
 progress-wyglad {
     width: 25%;
 }
@@ -59,14 +64,14 @@ ModalHeader {
 }
 
 
-input[type="password"] {
-    margin-left: 5px;
-    width: 95%;
-    border: 2px solid #6e006e;
-    border-radius: 30px;
-    background: transparent;
-    color: #f0ffff;
-}
+/*input[type="password"] {
+     margin-left: 5px;
+     width: 95%;
+     border: 2px solid #6e006e;
+     border-radius: 30px;
+     background: transparent;
+     color: #f0ffff;
+ }
 
 input[type="password"]:hover {
     color: #f9d7ff;
@@ -80,6 +85,15 @@ input[type="password"]:focus {
     border: 2px solid #e600e6;
     border-radius: 30px;
     background: transparent;
+}*/
+
+button[type="submit"] {
+    border-color: transparent;
+    color: #f0ffff;
+}
+button[type="submit"]:hover {
+    border-color: #6e006e;
+    color: #b7ffce;
 }
 
 input[type="text"] {
@@ -187,6 +201,7 @@ a:hover, a:visited:hover {
 
 .main-body2 {
     margin-top: 80px;
+    min-height: 500px;
     height: auto;
     width: auto;
     background: linear-gradient(#1e1e2f, #1e1e24);
@@ -286,47 +301,52 @@ b {
     margin-right: 20%;
 }
 
-.postep{
+.postep {
     width: 50%;
     margin-left: -1%;
     background-color: red;
 }
 
-.pasek-postepu{
+.pasek-postepu {
 
- }
-.pasek-procenty{
+}
+
+.pasek-procenty {
     margin-top: 5%;
 }
 
-.progresik{
+.progresik {
     width: 100%;
 
 }
 
-.blockquote-skills{
+.blockquote-skills {
     width: 48%;
     float: left;
 }
 
-.blockquote-date{
+.blockquote-date {
     margin-top: -8px;
     margin-right: 2%;
     width: 48%;
     float: right;
 }
 
-.date-user{
+.date-user {
     margin-top: -15px;
 }
 
-.li-work{
+.li-work {
     margin-left: 5px;
 }
 
-.register-body{
+.register-body {
     margin-left: 200px;
     margin-right: 200px;
     margin-bottom: 100px;
     color: #d364bf;
+}
+
+.login-footer{
+    font-size: 10px;
 }

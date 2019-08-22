@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import classnames from "classnames";
+import ExamplesNavbar from "components/Navbars/RegisterNavbar.jsx";
 // reactstrap components
 import {
     NavItem,
@@ -8,7 +9,7 @@ import {
     TabContent,
     TabPane,
     Row,
-    Col, Navbar, Container
+    Col
 } from "reactstrap";
 
 class Regulamin extends Component {
@@ -29,18 +30,7 @@ class Regulamin extends Component {
     render() {
         return (
             <>
-                <Navbar className="fixed-top bg-dark">
-                    <Container>
-                        <div className="test"> DAPS</div>
-                        <div className="rightnav">
-                            <Nav className="justify-content-right">
-                                <NavItem>
-                                        <NavLink href="/">Wróć</NavLink>
-                                </NavItem>
-                            </Nav>
-                        </div>
-                    </Container>
-                </Navbar>
+                <ExamplesNavbar />
                 <blockquote className="blockquote">
                     <p className="mb-0">Regulamin</p>
                 </blockquote>

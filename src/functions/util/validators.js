@@ -10,9 +10,20 @@ const isZip = (zip) => {
     else return false;
 };
 
+const isDateAfter = (date) => {
+    return new Date(date.toDateString()) > new Date(new Date().toDateString());
+};
+
 const isEmpty = (string) => {
     if (string === '') return true;
     else return false;
+};
+
+const isValidDate = (date) => {
+    const isDateFormat = require('is-date-format');
+    if (isDateFormat(date, 'mm/dd`/yyyy')) return true;
+    return false;
+
 };
 
 exports.validateSignUpData = (data) => {
@@ -24,23 +35,21 @@ exports.validateSignUpData = (data) => {
     }
 
     if (isEmpty(data.password)) errors.password = 'Pole nie może być puste';
+    if (data.password.length <= 6) errors.password = 'Hasło musi się składać z conajmniej 7 znaków';
     if (data.password !== data.confirmPassword) errors.confirmPassword = 'Hasła nie pasują do siebie';
 
+    /*
     if (isEmpty(data.name)) errors.name = 'Pole nie może być puste';
-
     if (isEmpty(data.surname)) errors.surname = 'Pole nie może być puste';
-
     if (isEmpty(data.company)) errors.company = 'Pole nie może być puste';
-
     if (isEmpty(data.city)) errors.city = 'Pole nie może być puste';
-
     if (isEmpty(data.province)) errors.province = 'Pole nie może być puste';
-
     if (isEmpty(data.zip)) {
         errors.zip = 'Nie może być puste';
     } else if (!isZip(data.zip)) {
         errors.zip = 'Blędnie wpisany zip';
     }
+    */
 
     if (isEmpty(data.handle)) errors.handle = 'Nie może być puste';
 
@@ -62,6 +71,35 @@ exports.validateLoginData = (data) => {
     }
 };
 
+exports.validateOrderData = (data) => {
+    let errors = {};
+
+    if (isEmpty(data.body)) errors.body = 'Pole nie może być puste';
+    if (isEmpty(data.title)) errors.title = 'Pole nie może być puste';
+    if (isEmpty(data.deadline)) {
+        errors.deadline = 'Pole nie może być puste';
+    } else if (!isValidDate(data.deadline)) {
+        errors.deadline = 'Błędnie wpisana data';
+    } else if (!isDateAfter(new Date(data.deadline))) {
+        errors.deadline = 'Data nie może być wcześniejsza niz obecna';
+    }
+
+
+    if (isEmpty(data.complexity)) {
+        errors.complexity = 'Nie może być puste';
+    } else if (isNaN(data.complexity)) {
+        errors.complexity = 'Blędnie wpisane dane';
+    } else if (data.complexity < 0) {
+        errors.complexity = 'Blędnie wpisane dane';
+    }
+
+
+    return {
+        errors,
+        valid: Object.keys(errors).length === 0 ? true : false
+    }
+};
+
 exports.validateWorkerData = (data) => {
     let errors = {};
     if (isEmpty(data.email)) {
@@ -71,21 +109,16 @@ exports.validateWorkerData = (data) => {
     }
 
     if (isEmpty(data.password)) errors.password = 'Pole nie może być puste';
+
+
+
     if (data.password !== data.confirmPassword) errors.confirmPassword = 'Hasła nie pasują do siebie';
 
     if (isEmpty(data.name)) errors.name = 'Pole nie może być puste';
 
     if (isEmpty(data.surname)) errors.surname = 'Pole nie może być puste';
 
-    if (isEmpty(data.city)) errors.city = 'Pole nie może być puste';
-
-    if (isEmpty(data.province)) errors.province = 'Pole nie może być puste';
-
-    if (isEmpty(data.zip)) {
-        errors.zip = 'Nie może być puste';
-    } else if (!isZip(data.zip)) {
-        errors.zip = 'Blędnie wpisane dane';
-    }
+    if (isEmpty(data.title)) errors.title = 'Pole nie może być puste';
 
     if (isEmpty(data.salary)) {
         errors.salary = 'Nie może być puste';
@@ -111,4 +144,20 @@ exports.validateWorkerData = (data) => {
         errors,
         valid: Object.keys(errors).length === 0 ? true : false
     }
-};
+}
+;
+
+exports.reduceUserDetails = (data) => {
+    let userDetails = {};
+
+    if (!isEmpty(data.bio.trim())) userDetails.bio = data.bio;
+    if (!isEmpty(data.website.trim())) {
+        //website
+        if (data.website.trim().substring(0, 4) !== 'http') {
+            userDetails.website = `http://${data.website.trim()}`;
+        } else userDetails.website = data.website;
+    }
+    if (!isEmpty((data.salary.trim()))) userDetails.salary = data.location;
+    if (!isEmpty((data.performance.trim()))) userDetails.performance = data.location;
+    return userDetails;
+}
