@@ -169,12 +169,12 @@
     }
 
     .info-title,
-    .info.info-horizontal .icon i,
+    .info.info-horizontal .iconh i,
     .card-pricing.card-plain ul li{
         color: $white;
     }
     .description,
-    .info .icon:not(.icon-circle){
+    .info .iconh:not(.icon-circle){
         color: $opacity-8;
     }
     .card:not(.card-plain){
@@ -182,7 +182,7 @@
             color: $black;
         }
         .info p,
-        .info .icon,
+        .info .iconh,
         .description{
             color: $dark-gray;
         }
@@ -417,7 +417,7 @@
             @include box-shadow($box-shadow);
             transition: all .2s cubic-bezier(.25,.65,.9,.75);
 
-            &.icon {
+            &.iconh {
                 width: var(--icon-size);
                 height: var(--icon-size);
                 font-size: 2em;
@@ -655,7 +655,7 @@
     a:not(.btn):not(.dropdown-item):not(.card-link),
     .icons-container i,
     &.card-pricing ul li,
-    .info.info-horizontal .icon i,
+    .info.info-horizontal .iconh i,
     .card-pricing.card-plain ul li{
         color: $white;
     }
@@ -670,7 +670,7 @@
     }
 
     &.footer hr,
-    &.card-pricing .icon i,
+    &.card-pricing .iconh i,
     &.card-pricing ul li{
         border-color: $opacity-2;
     }

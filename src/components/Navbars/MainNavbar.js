@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component, Fragment} from "react";
 import {Link} from "react-router-dom";
 import {
     Collapse,
@@ -11,8 +11,27 @@ import {
     Row,
     Col
 } from "reactstrap";
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import Przycisk from '../../util/Buttons';
+import AddIcon from '@material-ui/icons/Add';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import ConfigIcon from '@material-ui/icons/BrightnessLow';
+import PaymentIcon from '@material-ui/icons/AttachMoney';
+import withStyles from "@material-ui/core/styles/withStyles";
+import EditPassword from "../user/editPassword";
 
-class MainNavbar extends React.Component {
+const styles = {
+    'icon': {
+        color: '#dbaee1',
+    },
+    'icon:hover': {
+        color: '#81e177',
+        backgroundColor: 'red'
+    }
+};
+
+class MainNavbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,6 +83,7 @@ class MainNavbar extends React.Component {
     };
 
     render() {
+        const {authenticated} = this.props;
         return (
             <Navbar
                 className={"fixed-top " + this.state.color}
@@ -109,16 +129,46 @@ class MainNavbar extends React.Component {
                             </Row>
                         </div>
                         <Nav navbar>
-                            <NavItem>
-                                <NavLink tag={Link} to="/login">
-                                    Logowanie
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/signup">
-                                    Rejestracja
-                                </NavLink>
-                            </NavItem>
+                            {authenticated ? (
+                                <Fragment>
+                                    <NavItem>
+                                        <Przycisk tip="Dodaj zlecenie">
+                                            <AddIcon className="iconh">
+                                            </AddIcon>
+                                        </Przycisk>
+                                    </NavItem>
+                                    <NavItem>
+                                        <Przycisk tip="Powiadomienia">
+                                            <NotificationsIcon className="iconh">
+                                            </NotificationsIcon>
+                                        </Przycisk>
+                                    </NavItem>
+                                    <NavItem>
+                                            <div className="iconh">
+                                                 <EditPassword/>
+                                            </div>
+                                    </NavItem>
+                                    <NavItem>
+                                        <Przycisk tip="Płatności">
+                                            <PaymentIcon className="iconh">
+                                            </PaymentIcon>
+                                        </Przycisk>
+                                    </NavItem>
+                                </Fragment>
+                            ) : (
+                                <Fragment>
+                                    <NavItem>
+                                        <NavLink tag={Link} to="/login">
+                                            Logowanie
+                                        </NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} to="/signup">
+                                            Rejestracja
+                                        </NavLink>
+                                    </NavItem>
+                                </Fragment>
+                            )}
                         </Nav>
                     </Collapse>
                 </Container>
@@ -127,4 +177,12 @@ class MainNavbar extends React.Component {
     }
 }
 
-export default MainNavbar;
+MainNavbar.propTypes = {
+    authenticated: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = state => ({
+    authenticated: state.user.authenticated
+});
+
+export default connect(mapStateToProps)(withStyles(styles)(MainNavbar));

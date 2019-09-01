@@ -26,6 +26,19 @@ const isValidDate = (date) => {
 
 };
 
+exports.validateEmail = (data) => {
+    let errors = {};
+    if (isEmpty(data.email)) {
+        errors.email = 'Email nie może być pusty';
+    } else if (!isEmail(data.email)) {
+        errors.email = 'Błędny adres email';
+    }
+    return {
+        errors,
+        valid: Object.keys(errors).length === 0 ? true : false
+    }
+};
+
 exports.validateSignUpData = (data) => {
     let errors = {};
     if (isEmpty(data.email)) {
@@ -35,7 +48,8 @@ exports.validateSignUpData = (data) => {
     }
 
     if (isEmpty(data.password)) errors.password = 'Pole nie może być puste';
-    if (data.password.length <= 6) errors.password = 'Hasło musi się składać z conajmniej 7 znaków';
+    if (data.password.length < 6) errors.password = 'Hasło musi się składać z conajmniej 6 znaków';
+    if (isEmpty(data.confirmPassword)) errors.confirmPassword = 'Pole nie może być puste';
     if (data.password !== data.confirmPassword) errors.confirmPassword = 'Hasła nie pasują do siebie';
 
     /*
@@ -64,6 +78,20 @@ exports.validateLoginData = (data) => {
 
     if (isEmpty(data.email)) errors.email = 'Pole nie może być puste';
     if (isEmpty(data.password)) errors.password = 'Pole nie może być puste';
+
+    return {
+        errors,
+        valid: Object.keys(errors).length === 0 ? true : false
+    }
+};
+
+exports.validatePasswordData = (data) => {
+    let errors = {};
+
+    if (isEmpty(data.password)) errors.password = 'Pole nie może być puste';
+    if (data.password.length < 6) errors.password = 'Hasło musi się składać z conajmniej 6 znaków';
+    if (isEmpty(data.confirmPassword)) errors.confirmPassword = 'Pole nie może być puste';
+    if (data.password !== data.confirmPassword) errors.confirmPassword = 'Hasła nie pasują do siebie';
 
     return {
         errors,
@@ -144,20 +172,27 @@ exports.validateWorkerData = (data) => {
         errors,
         valid: Object.keys(errors).length === 0 ? true : false
     }
-}
-;
+};
 
 exports.reduceUserDetails = (data) => {
     let userDetails = {};
 
-    if (!isEmpty(data.bio.trim())) userDetails.bio = data.bio;
+    if (!isEmpty(data.name.trim())) userDetails.name = data.name;
+    if (!isEmpty(data.surname.trim())) userDetails.surname = data.surname;
     if (!isEmpty(data.website.trim())) {
         //website
         if (data.website.trim().substring(0, 4) !== 'http') {
             userDetails.website = `http://${data.website.trim()}`;
         } else userDetails.website = data.website;
     }
-    if (!isEmpty((data.salary.trim()))) userDetails.salary = data.location;
-    if (!isEmpty((data.performance.trim()))) userDetails.performance = data.location;
+    if (!isEmpty(data.location.trim())) userDetails.location = data.location;
     return userDetails;
-}
+};
+
+exports.getPremium = (data) => {
+    let userPremium = {};
+
+    if (!isEmpty(data.timePremium.trim())) userPremium.name = data.name;
+
+    return userPremium;
+};

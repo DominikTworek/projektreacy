@@ -281,7 +281,7 @@ class LandingPage extends React.Component {
                   <Row className="row-grid justify-content-center">
                     <Col lg="3">
                       <div className="info">
-                        <div className="icon icon-primary">
+                        <div className="iconh icon-primary">
                           <i className="tim-icons icon-money-coins" />
                         </div>
                         <h4 className="info-title">Low Commission</h4>
@@ -295,7 +295,7 @@ class LandingPage extends React.Component {
                     </Col>
                     <Col lg="3">
                       <div className="info">
-                        <div className="icon icon-warning">
+                        <div className="iconh icon-warning">
                           <i className="tim-icons icon-chart-pie-36" />
                         </div>
                         <h4 className="info-title">High Incomes</h4>
@@ -309,7 +309,7 @@ class LandingPage extends React.Component {
                     </Col>
                     <Col lg="3">
                       <div className="info">
-                        <div className="icon icon-success">
+                        <div className="iconh icon-success">
                           <i className="tim-icons icon-single-02" />
                         </div>
                         <h4 className="info-title">Verified People</h4>
@@ -385,7 +385,7 @@ class LandingPage extends React.Component {
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
                         <div className="d-flex align-items-center">
-                          <div className="icon icon-success mb-2">
+                          <div className="iconh icon-success mb-2">
                             <i className="tim-icons icon-vector" />
                           </div>
                           <div className="ml-3">
@@ -395,7 +395,7 @@ class LandingPage extends React.Component {
                       </li>
                       <li className="py-2">
                         <div className="d-flex align-items-center">
-                          <div className="icon icon-success mb-2">
+                          <div className="iconh icon-success mb-2">
                             <i className="tim-icons icon-tap-02" />
                           </div>
                           <div className="ml-3">
@@ -405,7 +405,7 @@ class LandingPage extends React.Component {
                       </li>
                       <li className="py-2">
                         <div className="d-flex align-items-center">
-                          <div className="icon icon-success mb-2">
+                          <div className="iconh icon-success mb-2">
                             <i className="tim-icons icon-single-02" />
                           </div>
                           <div className="ml-3">

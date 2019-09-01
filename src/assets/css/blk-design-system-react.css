@@ -10262,13 +10262,13 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
-.icon {
+.iconh {
   width: auto;
   height: auto; }
-  .icon i, .icon svg {
+  .iconh i, .iconh svg {
     font-size: auto-0.75; }
 
-.icon + .icon-text {
+.iconh + .icon-text {
   padding-left: 1rem;
   width: calc(100% - auto - 1); }
 
@@ -11820,7 +11820,7 @@ textarea.form-control {
     margin: 40px 0; }
   .landing-page .section-contact-us a.btn {
     margin-top: 35px; }
-  .landing-page .section-safe .icon i {
+  .landing-page .section-safe .iconh i {
     font-size: 21px; }
 
 .profile-page {
@@ -12310,9 +12310,9 @@ textarea.form-control {
   max-width: 360px;
   margin: 0 auto;
   padding: 70px 0 30px; }
-  .info .icon {
+  .info .iconh {
     color: #344675; }
-    .info .icon > i {
+    .info .iconh > i {
       font-size: 2.0625rem; }
   .info .info-title {
     color: #ffffff;
@@ -12339,29 +12339,29 @@ hr {
   hr.line-deafult {
     background-color: #344675; }
 
-.info-horizontal .icon {
+.info-horizontal .iconh {
   float: left;
   margin-top: 24px;
   margin-right: 10px; }
-  .info-horizontal .icon > i {
+  .info-horizontal .iconh > i {
     font-size: 2.0625rem; }
 
 .info-horizontal .description {
   overflow: hidden; }
 
-.icon.icon-primary {
+.iconh.icon-primary {
   color: #e14eca; }
 
-.icon.icon-info {
+.iconh.icon-info {
   color: #1d8cf8; }
 
-.icon.icon-success {
+.iconh.icon-success {
   color: #00f2c3; }
 
-.icon.icon-warning {
+.iconh.icon-warning {
   color: #ff8d72; }
 
-.icon.icon-danger {
+.iconh.icon-danger {
   color: #fd5d93; }
 
 .section {
@@ -12488,16 +12488,16 @@ hr {
     .section-image .nav-pills .nav-link:hover, .section-image .nav-pills .nav-link:focus {
       background-color: #ffffff; }
   .section-image .info-title,
-  .section-image .info.info-horizontal .icon i,
+  .section-image .info.info-horizontal .iconh i,
   .section-image .card-pricing.card-plain ul li {
     color: #ffffff; }
   .section-image .description,
-  .section-image .info .icon:not(.icon-circle) {
+  .section-image .info .iconh:not(.icon-circle) {
     color: rgba(255, 255, 255, 0.8); }
   .section-image .card:not(.card-plain) .info-title {
     color: #222a42; }
   .section-image .card:not(.card-plain) .info p,
-  .section-image .card:not(.card-plain) .info .icon,
+  .section-image .card:not(.card-plain) .info .iconh,
   .section-image .card:not(.card-plain) .description {
     color: #9A9A9A; }
   .section-image .footer {
@@ -12657,7 +12657,7 @@ hr {
       transform: translate(-50%, -50%);
       box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
       transition: all 0.2s cubic-bezier(0.25, 0.65, 0.9, 0.75); }
-      .section-nucleo-icons .icons-container i.icon {
+      .section-nucleo-icons .icons-container i.iconh {
         width: var(--icon-size);
         height: var(--icon-size);
         font-size: 2em; }
@@ -12803,7 +12803,7 @@ hr {
   [data-background-color]:not([data-background-color="gray"]) a:not(.btn):not(.dropdown-item):not(.card-link),
   [data-background-color]:not([data-background-color="gray"]) .icons-container i,
   [data-background-color]:not([data-background-color="gray"]).card-pricing ul li,
-  [data-background-color]:not([data-background-color="gray"]) .info.info-horizontal .icon i,
+  [data-background-color]:not([data-background-color="gray"]) .info.info-horizontal .iconh i,
   [data-background-color]:not([data-background-color="gray"]) .card-pricing.card-plain ul li {
     color: #ffffff; }
   [data-background-color]:not([data-background-color="gray"]).card a:not(.btn):not(.dropdown-item) {
@@ -12811,7 +12811,7 @@ hr {
     [data-background-color]:not([data-background-color="gray"]).card a:not(.btn):not(.dropdown-item):hover, [data-background-color]:not([data-background-color="gray"]).card a:not(.btn):not(.dropdown-item):focus {
       border-color: #ffffff; }
   [data-background-color]:not([data-background-color="gray"]).footer hr,
-  [data-background-color]:not([data-background-color="gray"]).card-pricing .icon i,
+  [data-background-color]:not([data-background-color="gray"]).card-pricing .iconh i,
   [data-background-color]:not([data-background-color="gray"]).card-pricing ul li {
     border-color: rgba(255, 255, 255, 0.2); }
   [data-background-color]:not([data-background-color="gray"]) .card-footer .stats i,

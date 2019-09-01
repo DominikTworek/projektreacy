@@ -2,7 +2,7 @@ const {db, admin} = require('../util/admin');
 const {firebase} = require('../util/firebase');
 const config = require('../util/config');
 
-const {validateSignUpData, validateLoginData, reduceUserDetails} = require('../util/validators');
+const {validateSignUpData, validateLoginData, reduceUserDetails, validatePasswordData, validateEmail} = require('../util/validators');
 
 exports.signup = (req, res) => {
     const newUser = {
@@ -80,9 +80,9 @@ exports.login = (req, res) => {
         })
         .catch(err => {
             console.error(err);
-                return res
-                    .status(403)
-                    .json({general: "Zły login lub hasło, proszę spróbuj ponownie"});
+            return res
+                .status(403)
+                .json({general: "Zły login lub hasło, proszę spróbuj ponownie"});
         });
 };
 
@@ -98,7 +98,113 @@ exports.addUserDetails = (req, res) => {
         })
 };
 
+exports.forgetUserPassword = (req, res) => {
+    const email = {
+        email: req.body.email
+    };
+
+    const {valid, errors} = validateEmail(email);
+    if (!valid) return res.status(400).json(errors);
+
+    firebase.auth().sendPasswordResetEmail(email.email)
+        .then(() => {
+            return res.json({message: 'Hasło zostało poprawnie wysłane na @'})
+        })
+        .catch(err => {
+            console.error(err);
+            return res
+                .status(403)
+                .json({general: "Ten Email nie istnieje w naszej bazie"});
+        });
+};
+
+exports.changeUserPassword = (req, res) => {
+    let uid = req.user.uid;
+    const pass = {
+        password: req.body.password,
+        confirmPassword: req.body.confirmPassword
+    };
+
+    const {valid, errors} = validatePasswordData(pass);
+    if (!valid) return res.status(400).json(errors);
+
+    admin.auth().updateUser(uid, {password: pass.password})
+        .then(() => {
+            return res.json({message: 'Hasło zostało poprawnie zmienione'})
+        })
+        .catch(err => {
+            console.log(err);
+            return res.stack(500).json({error: err.code});
+        })
+};
+
+
+exports.changeNormal = (req, res) => {
+    var datee = new Date();
+    datee.setDate(datee.getDate() + 31);
+    db.doc(`/users/${req.user.handle}`).update({
+        type: 'Normal',
+        timePremium: datee.toISOString()
+    })
+        .then(() => {
+            return res.json({message: 'Konto zmieniło status na Normal'})
+
+        })
+        .catch(err => {
+            console.log(err);
+            return res.stack(500).json({error: err.code});
+        })
+};
+
+exports.changePro = (req, res) => {
+    var datee = new Date();
+    datee.setDate(datee.getDate() + 31);
+    db.doc(`/users/${req.user.handle}`).update({
+        type: 'Pro',
+        timePremium: datee.toISOString()
+    })
+        .then(() => {
+            return res.json({message: 'Konto zmieniło status na Pro'})
+
+        })
+        .catch(err => {
+            console.log(err);
+            return res.stack(500).json({error: err.code});
+        })
+};
+
 exports.getUserDetails = (req, res) => {
+    var datee = new Date().toISOString();
+    db
+        .collection('users')
+        .where('handle', '==', req.user.handle)
+        .where('timePremium', '>', datee)
+        .get()
+        .then(data => {
+            let premiums = [];
+            data.forEach((doc) => {
+                premiums.push(doc.data());
+            });
+            if (premiums.length === 0) {
+                db.doc(`/users/${req.user.handle}`).update({
+                    type: 'Basic',
+                    timePremium: ''
+                })
+                    .then(() => {
+                        return res.json({message: 'Konto straciło wersję premium'})
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        return res.status(500).json({error: err.code});
+                    });
+            } else {
+                return res.status(200).json("Nic nie robię");
+            }
+        })
+        .catch(err => {
+        console.log(err);
+        return res.stack(500).json({error: err.code});
+    });
     let userData = {};
     db.doc(`/users/${req.user.handle}`).get()
         .then((doc) => {
@@ -116,7 +222,10 @@ exports.getUserDetails = (req, res) => {
             });
             return res.json(userData);
         })
-
+        .catch(err => {
+            console.log(err);
+            return res.status(500).json({error: err.code});
+        });
 };
 
 exports.uploadImage = (req, res) => {

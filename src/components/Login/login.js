@@ -3,7 +3,8 @@ import '../Css/register.css';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import axios from 'axios';
+import {connect} from 'react-redux';
+import {loginUser} from '../../redux/akcje/userActions';
 import {
     Button,
     CardBody, CardFooter,
@@ -14,7 +15,6 @@ import {
     Row
 } from "reactstrap";
 import React, {Component} from "react";
-import ExamplesNavbar from "components/Navbars/RegisterNavbar.jsx";
 import {PropTypes} from 'prop-types';
 import {Typography} from "@material-ui/core";
 
@@ -28,7 +28,6 @@ const styles = {
         marginRight: '10px'
     },
     textField: {
-
         '& label.Mui-focused': {
             color: '#fc62e5',
         },
@@ -72,7 +71,6 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            loading: false,
             errors: {}
         }
     }
@@ -114,31 +112,20 @@ class Login extends Component {
         });
     };
 
+    componentWillReceiveProps(nextProps: Readonly<P>, nextContext: any): void {
+        if(nextProps.UI.errors){
+            this.setState({
+                errors: nextProps.UI.errors
+            });
+        }
+    }
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({
-            loading: true
-        });
         const userData = {
             email: this.state.email,
             password: this.state.password
-        }
-        axios.defaults.baseURL = 'http://localhost:5001/projekt-studia/us-central1/api';
-        axios.post('/login', userData)
-            .then(res => {
-                console.log(res.data);
-                localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
-                this.setState({
-                    loading: false
-                });
-                this.props.history.push('/');
-            })
-            .catch(err => {
-                this.setState({
-                    errors: err.response.data,
-                    loading: false
-                })
-            })
+        };
+        this.props.loginUser(userData, this.props.history);
     };
 
     handleChange = (event) => {
@@ -148,11 +135,13 @@ class Login extends Component {
     };
 
     render() {
-        const {classes} = this.props;
-        const {errors, loading} = this.state;
+        const {
+            classes,
+            UI: { loading }
+        } = this.props;
+        const {errors} = this.state;
         return (
             <>
-                <ExamplesNavbar/>
                 <div className="page-header">
                     <div className="content">
                         <Container>
@@ -235,13 +224,23 @@ class Login extends Component {
                                             </Grid>
                                         </CardBody>
                                         <CardFooter className="login-footer">
-                                            Nie masz konta?<br/>
+                                            <p>Nie masz konta?<br/>
                                             <span className="form-check-sign"/>{" "}
                                             <a
                                                 href="/signup"
                                             >
                                                 Zarejestruj się
                                             </a>
+                                            </p>
+                                            <p>
+                                                Nie pamiętasz hasła?<br/>
+                                                <span className="form-check-sign"/>{" "}
+                                                <a
+                                                    href="/forget"
+                                                >
+                                                    Przypomnij hasło
+                                                </a>
+                                            </p>
 
                                         </CardFooter>
                                     </div>
@@ -287,8 +286,20 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    loginUser: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired,
+    UI: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+    user: state.user,
+    UI: state.UI
+});
+
+const mapActionsToProps = {
+    loginUser
 };
 
 
-export default withStylee(styles)(Login);
+export default connect(mapStateToProps, mapActionsToProps)(withStylee(styles)(Login));

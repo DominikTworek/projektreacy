@@ -3,8 +3,8 @@ import '../Css/register.css';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {connect} from "react-redux";
-import {signUpUser} from '../../redux/akcje/userActions';
+import {connect} from 'react-redux';
+import {forgetPassword} from '../../redux/akcje/userActions';
 import {
     Button,
     CardBody, CardFooter,
@@ -28,7 +28,6 @@ const styles = {
         marginRight: '10px'
     },
     textField: {
-
         '& label.Mui-focused': {
             color: '#fc62e5',
         },
@@ -66,14 +65,11 @@ const styles = {
     }
 };
 
-class Rejestracja extends Component {
+class ForgetPassword extends Component {
     constructor() {
         super();
         this.state = {
             email: '',
-            password: '',
-            confirmPassword: '',
-            handle: '',
             errors: {}
         }
     }
@@ -122,19 +118,12 @@ class Rejestracja extends Component {
             });
         }
     }
-
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({
-            loading: true
-        });
-        const newUser = {
+        const userEmail = {
             email: this.state.email,
-            password: this.state.password,
-            confirmPassword: this.state.confirmPassword,
-            handle: this.state.handle
         };
-        this.props.signUpUser(newUser, this.props.history);
+        this.props.forgetPassword(userEmail);
     };
 
     handleChange = (event) => {
@@ -144,8 +133,11 @@ class Rejestracja extends Component {
     };
 
     render() {
-        const {classes, UI: {loading}} = this.props;
-        const {errors} = this.state;
+        const {
+            classes,
+            UI: { loading }
+        } = this.props;
+        const {errors, message} = this.state;
         return (
             <>
                 <div className="page-header">
@@ -163,15 +155,15 @@ class Rejestracja extends Component {
                                         id="square8"
                                         style={{transform: this.state.squares7and8}}
                                     />
-                                    <div className="margin-karty card-register cardd ">
+                                    <div className="card-register cardd ">
                                         <CardHeader>
                                             <CardImg
                                                 alt="..."
                                                 src={require("assets/img/square-purple-1.png")}
                                             />
-                                            <CardTitle tag="h4">Rejestracja</CardTitle>
+                                            <CardTitle tag="h5">Hasło</CardTitle>
                                         </CardHeader>
-                                        <CardBody className="margin-karty">
+                                        <CardBody>
                                             <Grid container className={classes.form}>
                                                 <Grid item sm>
                                                     <form noValidate onSubmit={this.handleSubmit}>
@@ -197,90 +189,31 @@ class Rejestracja extends Component {
                                                                 }
                                                             }}
                                                         />
-                                                        <TextField
-                                                            id="password"
-                                                            name="password"
-                                                            type="password"
-                                                            label="hasło"
-                                                            className={classes.textField}
-                                                            value={this.state.password}
-                                                            helperText={errors.password}
-                                                            error={!!errors.password}
-                                                            onChange={this.handleChange}
-                                                            fullWidth
-                                                            InputProps={{
-                                                                classes: {
-                                                                    underline: classes.underline,
-                                                                    input: classes.input
-                                                                }
-                                                            }}
-                                                        />
-                                                        <TextField
-                                                            id="confirmPassword"
-                                                            name="confirmPassword"
-                                                            type="Password"
-                                                            label="Powtórz hasło"
-                                                            className={classes.textField}
-                                                            value={this.state.confirmPassword}
-                                                            helperText={errors.confirmPassword}
-                                                            error={!!errors.confirmPassword}
-                                                            onChange={this.handleChange}
-                                                            fullWidth
-                                                            InputProps={{
-                                                                classes: {
-                                                                    underline: classes.underline,
-                                                                    input: classes.input
-                                                                }
-                                                            }}
-                                                        />
-                                                        <TextField
-                                                            id="handle"
-                                                            name="handle"
-                                                            type="handle"
-                                                            label="Nick"
-                                                            className={classes.textField}
-                                                            value={this.state.handle}
-                                                            helperText={errors.handle}
-                                                            error={!!errors.handle}
-                                                            onChange={this.handleChange}
-                                                            fullWidth
-                                                            InputProps={{
-                                                                classes: {
-                                                                    underline: classes.underline,
-                                                                    input: classes.input
-                                                                }
-                                                            }}
-                                                        />
+                                                        {message && (
+                                                            <Typography className={message.error}>
+                                                                {message}
+                                                            </Typography>
+                                                        )}
                                                         {errors.general && (
                                                             <Typography className={classes.error}>
                                                                 {errors.general}
                                                             </Typography>
-
                                                         )}
                                                         <Button type="submit" variant="contained" color="primary"
                                                                 size="md" className={classes.button}>
-                                                            Zarejestruj Się
+                                                            Wyślij
                                                         </Button>
                                                     </form>
                                                 </Grid>
                                             </Grid>
                                         </CardBody>
                                         <CardFooter className="login-footer">
-                                            Masz już konto?<br/>
-                                            <span className="form-check-sign"/>{" "}
-                                            <a
-                                                href="/signup"
-                                            >
-                                                Zaloguj się
-                                            </a>
 
                                         </CardFooter>
                                     </div>
                                 </Col>
                             </Row>
-                            {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
                             <div className="register-bg"/>
-                            /*tło*/
                             <div
                                 className="square square-1"
                                 id="square1"
@@ -319,11 +252,11 @@ class Rejestracja extends Component {
     }
 }
 
-Rejestracja.propTypes = {
+ForgetPassword.propTypes = {
     classes: PropTypes.object.isRequired,
+    forgetPassword: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     UI: PropTypes.object.isRequired,
-    signUpUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -331,5 +264,9 @@ const mapStateToProps = (state) => ({
     UI: state.UI
 });
 
+const mapActionsToProps = {
+    forgetPassword
+};
 
-export default connect(mapStateToProps, {signUpUser})( withStylee(styles)(Rejestracja));
+
+export default connect(mapStateToProps, mapActionsToProps)(withStylee(styles)(ForgetPassword));

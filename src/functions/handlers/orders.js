@@ -108,7 +108,7 @@ exports.workerOnOrder = (req,res) => {
         userHandle: req.body.handle,
         userImage: req.body.imageUrl
     };
-    db.doc(`/orders/$req.params.orderId`).get()
+    db.doc(`/orders/${req.params.orderId}`).get()
         .then(doc => {
             if(!doc.exists){
                 return res.status(404).json({error: 'Zlecenie nie istnieje'});
@@ -129,7 +129,7 @@ exports.workerOnOrder = (req,res) => {
 
 exports.deleteOrder = (req,res) => {
     const dokument = db.doc(`/orders/${req.params.orderId}`);
-    document.get()
+    dokument.get()
         .then(doc => {
             if(!doc.exists) {
                 return res.status(404).json({error: 'Nie znaleziono zlecenia'});

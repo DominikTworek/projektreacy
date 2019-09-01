@@ -2,13 +2,28 @@ body {
     background: linear-gradient(#1e1e2f, #1e1e24);
 }
 
+
+
 button{
     background-color: transparent;
-
 }
 
-progress-wyglad {
-    width: 25%;
+.dialog-Title {
+    background-color: #161020;
+}
+
+.dialog-Content {
+    border: 1px #90558c;
+    background: linear-gradient(#121220, #630e61);
+}
+
+.dialog-Actions {
+    background: #630e61;
+}
+
+.przyciskZdjecie {
+    margin-left: -10px;
+    position: absolute;
 }
 
 .App {
@@ -59,8 +74,25 @@ pre {
     color: #e14eca;
 }
 
-ModalHeader {
-    background: linear-gradient(#1e1e2f, #1e1e24);
+a{
+    color: red;
+    textDecoration: 'none';
+}
+
+.icon{
+    color: #e1aed9;
+}
+
+.iconh{
+    color: #e1aed9;
+}
+
+.iconh:hover{
+    color: #e181a9;
+}
+
+.iconh:active{
+    color: #e1614f;
 }
 
 
@@ -92,6 +124,15 @@ button[type="submit"] {
     color: #f0ffff;
 }
 button[type="submit"]:hover {
+    border-color: #6e006e;
+    color: #b7ffce;
+}
+
+button[type="moj"] {
+    border-color: transparent;
+    color: #f0ffff;
+}
+button[type="moj"]:hover {
     border-color: #6e006e;
     color: #b7ffce;
 }
@@ -150,9 +191,6 @@ input[type="text"]:focus {
     float: right;
 }
 
-Stepper {
-    background-color: red;
-}
 
 a:link, a:visited {
     color: #ba54f5;
@@ -349,4 +387,10 @@ b {
 
 .login-footer{
     font-size: 10px;
+}
+
+.profile{
+    margin-top: 150px;
+    margin-right: 30px;
+    width: 80%;
 }

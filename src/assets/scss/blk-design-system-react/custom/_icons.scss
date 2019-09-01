@@ -1,4 +1,4 @@
-.icon {
+.iconh {
 	width: $icon-size;
 	height: $icon-size;
 
@@ -7,7 +7,7 @@
 	}
 }
 
-.icon + .icon-text {
+.iconh + .icon-text {
 	padding-left: 1rem;
 	width: calc(100% - #{$icon-size} - 1);
 }
