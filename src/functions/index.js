@@ -8,7 +8,7 @@ app.use(cors());
 const FBAuth = require('./util/fbAuth');
 
 const {getAllOrders, postOneOrder, getAdminOrders, getOrder, workerOnOrder, deleteOrder} = require('./handlers/orders');
-const {signup, login, uploadImage, addUserDetails, getUserDetails, changeNormal, changePro, changeUserPassword, forgetUserPassword} = require('./handlers/users');
+const {signup, login, uploadImage, addUserDetails, getUserDetails, changeNormal, changePro, changeUserPassword, forgetUserPassword, checkPremium} = require('./handlers/users');
 const {newWorker} = require('./handlers/workers');
 
 //Zlecenia funkcje
@@ -27,6 +27,7 @@ app.post('/user/edit', FBAuth, addUserDetails); //edycja danych uzytkownika
 app.post('/user/normal', FBAuth, changeNormal); //edycja danych uzytkownika
 app.post('/user/pro', FBAuth, changePro); //edycja danych uzytkownika
 app.post('/user/password', FBAuth, changeUserPassword); //zmiana hasła użytkownika
+app.post('/user/premium', FBAuth, checkPremium); //pobieranie danych uzytkownika
 app.get('/get', FBAuth, getUserDetails); //pobieranie danych uzytkownika
 app.post('/forget', forgetUserPassword); //zapomniałem hasła
 

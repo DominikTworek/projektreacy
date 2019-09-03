@@ -149,7 +149,7 @@ class Profile extends Component {
                             (
                                 <Fragment>
                                     <CalendarToday className="icon"/>
-                                    <span> Aktywne konto premium do {dayjs(timePremium).format('MMM YYYY')}</span>
+                                    <span> Aktywne konto premium do {dayjs(timePremium).format('DD/MM/YYYY')}</span>
                                 </Fragment>)}
                         </div>
                         <div className={classes.buttonLogOff}>

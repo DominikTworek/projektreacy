@@ -173,38 +173,80 @@ exports.changePro = (req, res) => {
         })
 };
 
-exports.getUserDetails = (req, res) => {
+exports.checkPremium = (req, res) => {
     var datee = new Date().toISOString();
-    db
-        .collection('users')
-        .where('handle', '==', req.user.handle)
-        .where('timePremium', '>', datee)
+    db.doc(`/users/${req.user.handle}`)
         .get()
-        .then(data => {
-            let premiums = [];
-            data.forEach((doc) => {
-                premiums.push(doc.data());
-            });
-            if (premiums.length === 0) {
-                db.doc(`/users/${req.user.handle}`).update({
-                    type: 'Basic',
-                    timePremium: ''
-                })
-                    .then(() => {
-                        return res.json({message: 'Konto straciło wersję premium'})
+        .then(() => {
+                db
+                    .collection('users')
+                    .where('handle', '==', req.user.handle)
+                    .where('timePremium', '>', datee)
+                    .get()
+                    .then(data => {
+                        let premiums = [];
+                        data.forEach((doc) => {
+                            premiums.push(doc.data());
+                        });
+                        if (premiums.length === 0) {
+                            db.doc(`/users/${req.user.handle}`).update({
+                                type: 'Basic',
+                                timePremium: ''
+                            })
+                                .then(() => {
+                                    return res.json({message: 'Test'});
+                                })
+                                .catch(err => {
+                                    console.log(err);
+                                    return res.status(500).json({error: err.code});
+                                });
+                        } else {
+                            return res.status(200).json('Premium Aktualne');
+                        }
                     })
                     .catch(err => {
                         console.log(err);
-                        return res.status(500).json({error: err.code});
+                        return res.stack(500).json({error: err.code});
                     });
-            } else {
-                return res.status(200).json("Nic nie robię");
-            }
-        })
-        .catch(err => {
-        console.log(err);
-        return res.stack(500).json({error: err.code});
-    });
+        });
+};
+
+exports.getUserDetails = (req, res) => {
+    var datee = new Date().toISOString();
+    db.doc(`/users/${req.user.handle}`)
+        .get()
+        .then(() => {
+            db
+                .collection('users')
+                .where('handle', '==', req.user.handle)
+                .where('timePremium', '>', datee)
+                .get()
+                .then(data => {
+                    let premiums = [];
+                    data.forEach((doc) => {
+                        premiums.push(doc.data());
+                    });
+                    if (premiums.length === 0) {
+                        db.doc(`/users/${req.user.handle}`).update({
+                            type: 'Basic',
+                            timePremium: ''
+                        })
+                            .then(() => {
+                                return res.json({message: 'Test'});
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                return res.status(500).json({error: err.code});
+                            });
+                    } else {
+                        return res.status(200).json('Premium Aktualne');
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    return res.stack(500).json({error: err.code});
+                });
+        });
     let userData = {};
     db.doc(`/users/${req.user.handle}`).get()
         .then((doc) => {

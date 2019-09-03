@@ -65,7 +65,7 @@ const styles = {
     }
 };
 
-class ForgetPassword extends Component {
+class ForgetPasswordClass extends Component {
     constructor() {
         super();
         this.state = {
@@ -252,7 +252,7 @@ class ForgetPassword extends Component {
     }
 }
 
-ForgetPassword.propTypes = {
+ForgetPasswordClass.propTypes = {
     classes: PropTypes.object.isRequired,
     forgetPassword: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
@@ -269,4 +269,4 @@ const mapActionsToProps = {
 };
 
 
-export default connect(mapStateToProps, mapActionsToProps)(withStylee(styles)(ForgetPassword));
+export default connect(mapStateToProps, mapActionsToProps)(withStylee(styles)(ForgetPasswordClass));

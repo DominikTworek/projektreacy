@@ -16,10 +16,9 @@ import PropTypes from 'prop-types';
 import Przycisk from '../../util/Buttons';
 import AddIcon from '@material-ui/icons/Add';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import ConfigIcon from '@material-ui/icons/BrightnessLow';
-import PaymentIcon from '@material-ui/icons/AttachMoney';
 import withStyles from "@material-ui/core/styles/withStyles";
 import EditPassword from "../user/editPassword";
+import Payment from "../user/payment";
 
 const styles = {
     'icon': {
@@ -149,10 +148,9 @@ class MainNavbar extends Component {
                                             </div>
                                     </NavItem>
                                     <NavItem>
-                                        <Przycisk tip="Płatności">
-                                            <PaymentIcon className="iconh">
-                                            </PaymentIcon>
-                                        </Przycisk>
+                                        <div className="iconh">
+                                            <Payment/>
+                                        </div>
                                     </NavItem>
                                 </Fragment>
                             ) : (

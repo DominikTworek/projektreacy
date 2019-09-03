@@ -42,6 +42,7 @@ export const changePassword = (userPassword, history) => (dispatch) => {
             localStorage.removeItem('FBIdToken');
             delete axios.defaults.headers.common['Authorization'];
             dispatch({type: SET_UNAUTHENTICATED});
+            history.push('/login');
         })
         .catch(err => {
             dispatch({
@@ -49,7 +50,6 @@ export const changePassword = (userPassword, history) => (dispatch) => {
                 payload: err.response.data
             })
         });
-        history.push('/login');
 };
 
 
@@ -104,6 +104,22 @@ export const editUserDetails = (userDetails) => (dispatch => {
             dispatch(getUserData())
         }).catch((err => console.log(err)));
 
+});
+
+export const paymentNormal = () => (dispatch => {
+    dispatch({type: LOADING_USER});
+    axios.post('/user/normal')
+        .then(() => {
+            dispatch(getUserData())
+        }).catch((err => console.log(err)));
+});
+
+export const paymentPro = () => (dispatch => {
+    dispatch({type: LOADING_USER});
+    axios.post('/user/pro')
+        .then(() => {
+            dispatch(getUserData())
+        }).catch((err => console.log(err)));
 });
 
 const setAuthorizationHeader = (token) => {

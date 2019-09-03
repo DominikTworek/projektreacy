@@ -13,6 +13,8 @@ import {
     TabContent,
     TabPane
 } from "reactstrap";
+import PaypalExpressBtn from "react-paypal-express-checkout";
+import Grid from "@material-ui/core/Grid";
 
 
 const styles = {
@@ -29,13 +31,41 @@ class Payment extends Component {
             plainTabs: 1
         };
     }
+
     toggleTabs = (e, stateName, index) => {
         e.preventDefault();
         this.setState({
             [stateName]: index
         });
     };
+
     render() {
+        const onSuccess = (payment) => {
+            console.log("The payment was succeeded!", payment);
+        };
+
+        const onSuccess2 = (payment) => {
+            console.log("The payment was succeeded!", payment);
+        };
+
+        const onCancel = (data) => {
+            console.log('The payment was cancelled!', data);
+        };
+
+        const onError = (err) => {
+            console.log("Error!", err);
+        };
+
+        let env = 'sandbox';
+        let currency = 'PLN';
+        let total = 15.00;
+        let total2 = 30.00;
+
+        const client = {
+            sandbox:    'ARV0_RTSPOeR-6XyErK7XaI6Ta0G-8LPuju2TvSL24v8Y_SK2NXFlVsVnIfX_HzXxsNF1Q46nsPZmz5O',
+            production: 'ENebwLeWmi7aR7PFuefplxSP7TRw0unLfd-RxH8Iv6BHaNq8yg8SfBZ5Bq1kzkUbS3y45marz47OUCC1',
+        };
+
         return (
             <Card className="card-nav-tabs card-plain">
                 <CardHeader className="card-header-danger">
@@ -51,29 +81,7 @@ class Payment extends Component {
                                         onClick={e => this.toggleTabs(e, "plainTabs", 1)}
                                         href="#pablo"
                                     >
-                                        Home
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        className={classnames({
-                                            active: this.state.plainTabs === 2
-                                        })}
-                                        onClick={e => this.toggleTabs(e, "plainTabs", 2)}
-                                        href="#pablo"
-                                    >
-                                        Updates
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        className={classnames({
-                                            active: this.state.plainTabs === 3
-                                        })}
-                                        onClick={e => this.toggleTabs(e, "plainTabs", 3)}
-                                        href="#pablo"
-                                    >
-                                        History
+                                        PayPal
                                     </NavLink>
                                 </NavItem>
                             </Nav>
@@ -84,35 +92,17 @@ class Payment extends Component {
                     <TabContent className="text-center" activeTab={"plainTabs" + this.state.plainTabs}>
                         <TabPane tabId="plainTabs1">
                             <p>
-                                I think that’s a responsibility that I have, to push
-                                possibilities, to show people, this is the level that things
-                                could be at. So when you get something that has the name
-                                Kanye West on it, it’s supposed to be pushing the furthest
-                                possibilities. I will be the leader of a company that ends
-                                up being worth billions of dollars, because I got the
-                                answers. I understand culture. I am the nucleus.
-                            </p>
-                        </TabPane>
-                        <TabPane tabId="plainTabs2">
-                            <p>
-                                I will be the leader of a company that ends up being worth
-                                billions of dollars, because I got the answers. I understand
-                                culture. I am the nucleus. I think that’s a responsibility
-                                that I have, to push possibilities, to show people, this is
-                                the level that things could be at. I think that’s a
-                                responsibility that I have, to push possibilities, to show
-                                people, this is the level that things could be at.
-                            </p>
-                        </TabPane>
-                        <TabPane tabId="plainTabs3">
-                            <p>
-                                I think that’s a responsibility that I have, to push
-                                possibilities, to show people, this is the level that things
-                                could be at. I will be the leader of a company that ends up
-                                being worth billions of dollars, because I got the answers.
-                                I understand culture. I am the nucleus. I think that’s a
-                                responsibility that I have, to push possibilities, to show
-                                people, this is the level that things could be at.
+                                <Grid container spacing={10}>
+                                    <Grid item sm={6} xs={12}>
+                                        15zł NORMAL
+                                        <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
+                                    </Grid>
+                                    <Grid item sm={6} xs={12}>
+                                        30zł PRO
+                                        <PaypalExpressBtn env={env} client={client} currency={currency} total={total2} onError={onError} onSuccess={onSuccess2} onCancel={onCancel} />
+                                    </Grid>
+                                </Grid>
+
                             </p>
                         </TabPane>
                     </TabContent>
