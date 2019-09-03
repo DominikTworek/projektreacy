@@ -42,12 +42,11 @@ export const changePassword = (userPassword, history) => (dispatch) => {
             localStorage.removeItem('FBIdToken');
             delete axios.defaults.headers.common['Authorization'];
             dispatch({type: SET_UNAUTHENTICATED});
-            history.push('/login');
         })
         .catch(err => {
             dispatch({
                 type: SET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
             })
         });
 };

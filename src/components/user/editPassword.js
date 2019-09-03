@@ -102,7 +102,7 @@ class EditProfile extends Component {
         return (
             <Fragment>
                 <div className={classes.button} onClick={this.handleOpen}>
-                    <Przycisk tip="Edytuj Dane">
+                    <Przycisk tip="Edytuj Hasło">
                         <ConfigIcon className="iconh"/>
                     </Przycisk>
                 </div>
@@ -111,7 +111,7 @@ class EditProfile extends Component {
                         maxWidth="sm"
                         fullWidth
                 >
-                    <DialogTitle className="dialog-Title">Edytuj Dane</DialogTitle>
+                    <DialogTitle className="dialog-Title">Edytuj Hasło</DialogTitle>
                     <dialogContent className="dialog-Content">
                         {loading && (
                             <CircularProgress className={classes.ladowanie}/>
@@ -121,12 +121,14 @@ class EditProfile extends Component {
                                 id="password"
                                 name="password"
                                 type="password"
-                                label="hasło"
-                                className={classes.textField}
+                                label="Hasło"
+                                rows="3"
+                                placeholder="Twoje Hasło"
+                                className={classes.TextField}
                                 value={this.state.password}
+                                onChange={this.handleChange}
                                 helperText={errors.password}
                                 error={!!errors.password}
-                                onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
                                     classes: {
@@ -136,11 +138,11 @@ class EditProfile extends Component {
                                 }}
                             />
                             <TextField
-                                id="confirmPassword"
                                 name="confirmPassword"
-                                type="Password"
+                                type="password"
                                 label="Powtórz hasło"
-                                className={classes.textField}
+                                placeholder="Wpisz jeszcze raz hasło"
+                                className={classes.TextField}
                                 value={this.state.confirmPassword}
                                 helperText={errors.confirmPassword}
                                 error={!!errors.confirmPassword}
@@ -181,8 +183,5 @@ const mapStateToProps = (state) => ({
     UI: state.UI
 });
 
-const mapActionsToProps = {
-    changePassword
-};
 
-export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(EditProfile));
+export default connect(mapStateToProps, {changePassword})(withStyles(styles)(EditProfile));
