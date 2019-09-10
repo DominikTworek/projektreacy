@@ -17,6 +17,11 @@ import {
 import React, {Component} from "react";
 import {PropTypes} from 'prop-types';
 import {Typography} from "@material-ui/core";
+import {ACCESS_TOKEN, FACEBOOK_AUTH_URL} from "../extra/consts";
+import fbLogo from '../../assets/img/fb-logo.png';
+import {login} from "../extra/requests";
+import Alert from 'react-s-alert';
+
 
 const styles = {
     form: {
@@ -119,13 +124,20 @@ class Login extends Component {
             });
         }
     }
+
     handleSubmit = (event) => {
         event.preventDefault();
-        const userData = {
-            email: this.state.email,
-            password: this.state.password
-        };
-        this.props.loginUser(userData, this.props.history);
+
+        const loginRequest = Object.assign({}, this.state);
+
+        login(loginRequest)
+            .then(response => {
+                localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+                Alert.success("Zostałeś zalogowany!");
+                this.props.history.push("/");
+            }).catch(error => {
+            Alert.error((error && error.message) || 'Oops! Coś poszło nie tak, spróbuj ponownie!');
+        });
     };
 
     handleChange = (event) => {
@@ -166,6 +178,7 @@ class Login extends Component {
                                             <CardTitle tag="h4">Logowanie</CardTitle>
                                         </CardHeader>
                                         <CardBody>
+                                            <SocialLogin />
                                             <Grid container className={classes.form}>
                                                 <Grid item sm>
                                                     <form noValidate onSubmit={this.handleSubmit}>
@@ -281,6 +294,24 @@ class Login extends Component {
                     </div>
                 </div>
             </>
+        );
+    }
+}
+
+class SocialLogin extends Component {
+
+    imgStyle = {
+        height: 30,
+        width: 30,
+        marginRight: 30
+    };
+
+    render() {
+        return (
+            <div className="social-login">
+                <a className="btn btn-block social-btn facebook" href={FACEBOOK_AUTH_URL}>
+                    <img src={fbLogo} alt="Facebook" style={this.imgStyle}/> Zaloguj się za pomocą Facebook</a>
+            </div>
         );
     }
 }

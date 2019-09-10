@@ -17,6 +17,10 @@ import {
 import React, {Component} from "react";
 import {PropTypes} from 'prop-types';
 import {Typography} from "@material-ui/core";
+import {register} from "../extra/requests";
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 
 const styles = {
     form: {
@@ -70,10 +74,10 @@ class Rejestracja extends Component {
     constructor() {
         super();
         this.state = {
+            name: '',
             email: '',
             password: '',
             confirmPassword: '',
-            handle: '',
             errors: {}
         }
     }
@@ -128,13 +132,21 @@ class Rejestracja extends Component {
         this.setState({
             loading: true
         });
-        const newUser = {
-            email: this.state.email,
-            password: this.state.password,
-            confirmPassword: this.state.confirmPassword,
-            handle: this.state.handle
-        };
-        this.props.signUpUser(newUser, this.props.history);
+
+        const signUpRequest = Object.assign({}, this.state);
+
+        if(signUpRequest.password !== signUpRequest.confirmPassword) {
+            Alert.error('Oops! Something went wrong. Please enter password again!');
+        }
+        else {
+            register(signUpRequest)
+                .then(response => {
+                    Alert.success("Zostałeś zarejestrowany. Zaloguj się aby kontynuować!");
+                    this.props.history.push("/login");
+                }).catch(error => {
+                Alert.error((error && error.message) || 'Oops! Coś poszło nie tak, spróbuj ponownie!');
+            });
+        }
     };
 
     handleChange = (event) => {
@@ -234,14 +246,14 @@ class Rejestracja extends Component {
                                                             }}
                                                         />
                                                         <TextField
-                                                            id="handle"
-                                                            name="handle"
+                                                            id="name"
+                                                            name="name"
                                                             type="handle"
                                                             label="Nick"
                                                             className={classes.textField}
-                                                            value={this.state.handle}
-                                                            helperText={errors.handle}
-                                                            error={!!errors.handle}
+                                                            value={this.state.name}
+                                                            helperText={errors.name}
+                                                            error={!!errors.name}
                                                             onChange={this.handleChange}
                                                             fullWidth
                                                             InputProps={{

@@ -18,6 +18,11 @@ import axios from 'axios';
 import {SET_AUTHENTICATED} from "./redux/types";
 import {logoutUser, getUserData} from "./redux/akcje/userActions";
 import Examples from "./components/Navbars/MainNavbar";
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
+import RedirectHandler from "./components/oauth2/RedirectHandler";
+
 
 axios.defaults.baseURL = 'http://localhost:5001/projekt-studia/us-central1/api';
 
@@ -41,6 +46,7 @@ class Site extends Component {
             <div className="App">
             <Provider store={store}>
                 <BrowserRouter>
+                    <Route path="/oauth2/redirect" component={RedirectHandler}></Route>
                     <Examples/>
                     <div className="main-body2">
                         <Switch>
@@ -61,6 +67,9 @@ class Site extends Component {
                     </footer>
                 </BrowserRouter>
             </Provider>
+                <Alert stack={{limit: 3}}
+                       timeout = {3000}
+                       position='top-right' effect='slide' offset={65} />
             </div>
         );
     }
