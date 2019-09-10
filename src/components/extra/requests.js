@@ -8,11 +8,22 @@ const request = (method, data, url) => {
         headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN))
     }
 
-    const init = {
-        method,
-        headers,
-        body: JSON.stringify(data)
-    };
+    let init = {};
+
+    if(data !== '') {
+        init = {
+            method,
+            headers,
+            body: JSON.stringify(data)
+        };
+    }
+    else{
+        init = {
+            method,
+            headers,
+            body: JSON.stringify(data)
+        };
+    }
 
     const request = new Request(url, init);
 
@@ -67,6 +78,6 @@ export function completePayment(paymentId, payerId) {
     return request(
         'POST',
         '',
-        BASE_URL + 'paypal/complete/payment?paymentId=' + paymentId + '&PayerID=' + payerId,
+        BASE_URL + '/paypal/complete/payment?paymentId=' + paymentId + '&PayerID=' + payerId,
     );
 }
