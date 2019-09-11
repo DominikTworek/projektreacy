@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd4a0615-a904-4363-9e05-1bcfa70debe4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/extra/consts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/extra/request.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,15 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            <state relative-caret-position="216">
+              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
-                <element signature="e#731#771#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/extra/request.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -126,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/functions/util/config.js" />
         <option value="$PROJECT_DIR$/src/functions/handlers/workers.js" />
         <option value="$PROJECT_DIR$/src/functions/util/fbAuth.js" />
         <option value="$PROJECT_DIR$/src/components/register/register.js" />
@@ -177,6 +182,7 @@
         <option value="$PROJECT_DIR$/src/components/user/editPassword.js" />
         <option value="$PROJECT_DIR$/src/components/extra/const.js" />
         <option value="$PROJECT_DIR$/src/components/Login/login.js" />
+        <option value="$PROJECT_DIR$/src/components/extra/request.js" />
       </list>
     </option>
   </component>
@@ -232,6 +238,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Footer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projektreacy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projektreacy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ForgetPassword" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projektreacy" type="b2602c69:ProjectViewProjectNode" />
@@ -369,7 +382,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304165000" />
+    <option name="totallyTimeSpent" value="304176000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -409,9 +422,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/klucz.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -771,12 +781,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+        <state relative-caret-position="216">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
-            <element signature="e#731#771#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/extra/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
         </state>
       </provider>
     </entry>
