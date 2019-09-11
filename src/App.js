@@ -18,6 +18,12 @@ import axios from 'axios';
 import {SET_AUTHENTICATED} from "./redux/types";
 import {logoutUser, getUserData} from "./redux/akcje/userActions";
 import Examples from "./components/Navbars/MainNavbar";
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
+import RedirectHandler from "./components/oauth2/RedirectHandler";
+import {completePayment, payment} from "./components/extra/requests";
+
 
 axios.defaults.baseURL = 'http://localhost:5001/projekt-studia/us-central1/api';
 
@@ -34,13 +40,34 @@ if (token) {
     }
 }
 
+
+
 class Site extends Component {
+
+    handlePayment(sum) {
+        payment(sum).then(response => console.log(response.redirect_url));
+    }
+
+    handleConfirm(){
+
+        const url_string = window.location.href;
+
+        if(url_string.includes("paymentId")) {
+            const url = new URL(url_string);
+            const paymentId = url.searchParams.get("paymentId");
+            const payerId = url.searchParams.get("PayerID");
+
+            completePayment(paymentId, payerId);
+        }
+    }
+
     render() {
         return (
 
             <div className="App">
             <Provider store={store}>
                 <BrowserRouter>
+                    <Route path="/oauth2/redirect" component={RedirectHandler}></Route>
                     <Examples/>
                     <div className="main-body2">
                         <Switch>
@@ -54,6 +81,12 @@ class Site extends Component {
                         </Switch>
                     </div>
                     <footer className="page-footer font-small ">
+                        <div>
+                            <button onClick={() => this.handlePayment(10.00)}> Make a payment </button>
+                            <br />
+                            <br />
+                            <button onClick={() => this.handleConfirm()}> Confirm payment </button>
+                        </div>
                         <div className="footer-copyright text-center py-3 color-copyright">© 2019 Copyright:
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a href="#"> Student Kielce</a>
@@ -61,6 +94,9 @@ class Site extends Component {
                     </footer>
                 </BrowserRouter>
             </Provider>
+                <Alert stack={{limit: 3}}
+                       timeout = {3000}
+                       position='top-right' effect='slide' offset={65} />
             </div>
         );
     }
