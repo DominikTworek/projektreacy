@@ -120,12 +120,22 @@ class Login extends Component {
         }
     }
     handleSubmit = (event) => {
+        const loginRequest = Object.assign({}, this.state);
+
+        login(loginRequest)
+            .then(response => {
+                localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+                Alert.success("Zostałeś zalogowany!");
+                const userData = {
+                    email: this.state.email,
+                    password: this.state.password
+                };
+                this.props.loginUser(userData, this.props.history);
+                this.props.history.push("/user");
+            }).catch(error => {
+            Alert.error((error && error.message) || 'Oops! Coś poszło nie tak, spróbuj ponownie!');
+        });
         event.preventDefault();
-        const userData = {
-            email: this.state.email,
-            password: this.state.password
-        };
-        this.props.loginUser(userData, this.props.history);
     };
 
     handleChange = (event) => {
