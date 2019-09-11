@@ -17,6 +17,10 @@ import {
 import React, {Component} from "react";
 import {PropTypes} from 'prop-types';
 import {Typography} from "@material-ui/core";
+import {ACCESS_TOKEN, FACEBOOK_AUTH_URL} from "../extra/consts";
+import fbLogo from '../../assets/img/fb-logo.png';
+import {login} from "../extra/requests";
+import Alert from 'react-s-alert';
 
 const styles = {
     form: {
