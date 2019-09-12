@@ -1,11 +1,13 @@
 import {ACCESS_TOKEN, BASE_URL} from "./consts";
+import axios from "axios";
 
 const requests = (method, data, url) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
     if(localStorage.getItem(ACCESS_TOKEN)){
-        headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN))
+        headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN));
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem(ACCESS_TOKEN);
     }
 
     let init = {};

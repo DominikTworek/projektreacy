@@ -1,11 +1,13 @@
 import {SET_USER, SET_ERRORS, CLEAR_ERRORS, LOADING_UI, SET_UNAUTHENTICATED, LOADING_USER} from "../types";
 import axios from "axios";
 import Alert from 'react-s-alert';
+import {ACCESS_TOKEN} from "../../components/extra/consts";
 
 export const loginUser = (userData, history) => (dispatch) => {
     dispatch({type: LOADING_UI});
-    axios.post('/auth/login', userData)
+    axios.post('http://localhost:8080/auth/login', userData)
         .then(res => {
+            setAuthorizationHeader(res.data.accessToken);
             dispatch(getUserData());
             dispatch({type: CLEAR_ERRORS});
             history.push('/user');
@@ -77,7 +79,7 @@ export const logoutUser = () => (dispatch) => {
 
 export const getUserData = () => (dispatch) => {
     dispatch({type: LOADING_USER});
-    axios.get('/employee/me')
+    axios.get('http://localhost:8080/employee/me')
         .then(res => {
             dispatch({
                 type: SET_USER,
@@ -123,6 +125,6 @@ export const paymentPro = () => (dispatch => {
 
 const setAuthorizationHeader = (token) => {
     const FBIdToken = `Bearer ${token}`;
-    localStorage.setItem('FBIdToken', FBIdToken);
+    localStorage.setItem(ACCESS_TOKEN, FBIdToken);
     axios.defaults.headers.common['Authorization'] = FBIdToken;
 };

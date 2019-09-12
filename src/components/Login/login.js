@@ -127,15 +127,12 @@ class Login extends Component {
         const loginRequest = Object.assign({}, this.state);
 
         login(loginRequest)
-            .then(response => {
-                localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+            .then( () => {
                 const userData = {
                     email: this.state.email,
                     password: this.state.password
                 };
                 this.props.loginUser(userData, this.props.history);
-                this.props.history.push("/user");
-
             }).catch(error => {
             Alert.error((error && error.message) || 'Oops! Coś poszło nie tak, spróbuj ponownie!');
         });
