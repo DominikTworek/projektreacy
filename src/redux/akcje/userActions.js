@@ -21,7 +21,7 @@ export const loginUser = (userData, history) => (dispatch) => {
 };
 
 export const signUpUser = (newUserData, history) => (dispatch) => {
-    dispatch({type: LOADING_USER});
+    dispatch({type: LOADING_UI});
     axios.post('http://localhost:8080/auth/signup', newUserData)
         .then(res => {
             setAuthorizationHeader(res.data.accessToken);

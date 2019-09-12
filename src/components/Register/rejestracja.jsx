@@ -73,7 +73,7 @@ class Rejestracja extends Component {
             email: '',
             password: '',
             confirmPassword: '',
-            handle: '',
+            name: '',
             errors: {}
         }
     }
@@ -131,8 +131,7 @@ class Rejestracja extends Component {
         const newUser = {
             email: this.state.email,
             password: this.state.password,
-            confirmPassword: this.state.confirmPassword,
-            handle: this.state.handle
+            user: this.state.user
         };
         this.props.signUpUser(newUser, this.props.history);
     };
@@ -234,14 +233,14 @@ class Rejestracja extends Component {
                                                             }}
                                                         />
                                                         <TextField
-                                                            id="handle"
-                                                            name="handle"
-                                                            type="handle"
+                                                            id="name"
+                                                            name="name"
+                                                            type="name"
                                                             label="Nick"
                                                             className={classes.textField}
-                                                            value={this.state.handle}
-                                                            helperText={errors.handle}
-                                                            error={!!errors.handle}
+                                                            value={this.state.name}
+                                                            helperText={errors.name}
+                                                            error={!!errors.name}
                                                             onChange={this.handleChange}
                                                             fullWidth
                                                             InputProps={{
