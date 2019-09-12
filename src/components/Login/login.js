@@ -59,12 +59,12 @@ const styles = {
     button: {
         marginTop: '20px'
     },
-    error:{
+    error: {
         marginTop: '10px',
         color: '#fc2887',
         fontSize: '0.7am'
     },
-    ladowanie:{
+    ladowanie: {
         color: '#fc4edb'
     }
 };
@@ -117,26 +117,20 @@ class Login extends Component {
     };
 
     componentWillReceiveProps(nextProps: Readonly<P>, nextContext: any): void {
-        if(nextProps.UI.errors){
+        if (nextProps.UI.errors) {
             this.setState({
                 errors: nextProps.UI.errors
             });
         }
     }
-    handleSubmit = (event) => {
-        const loginRequest = Object.assign({}, this.state);
 
-        login(loginRequest)
-            .then( () => {
-                const userData = {
-                    email: this.state.email,
-                    password: this.state.password
-                };
-                this.props.loginUser(userData, this.props.history);
-            }).catch(error => {
-            Alert.error((error && error.message) || 'Oops! Coś poszło nie tak, spróbuj ponownie!');
-        });
+    handleSubmit = (event) => {
         event.preventDefault();
+        const userData = {
+            email: this.state.email,
+            password: this.state.password
+        };
+        this.props.loginUser(userData, this.props.history);
     };
 
     handleChange = (event) => {
@@ -148,7 +142,7 @@ class Login extends Component {
     render() {
         const {
             classes,
-            UI: { loading }
+            UI: {loading}
         } = this.props;
         const {errors} = this.state;
         return (
@@ -236,12 +230,12 @@ class Login extends Component {
                                         </CardBody>
                                         <CardFooter className="login-footer">
                                             <p>Nie masz konta?<br/>
-                                            <span className="form-check-sign"/>{" "}
-                                            <a
-                                                href="/signup"
-                                            >
-                                                Zarejestruj się
-                                            </a>
+                                                <span className="form-check-sign"/>{" "}
+                                                <a
+                                                    href="/signup"
+                                                >
+                                                    Zarejestruj się
+                                                </a>
                                             </p>
                                             <p>
                                                 Nie pamiętasz hasła?<br/>
