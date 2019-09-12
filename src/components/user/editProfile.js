@@ -84,10 +84,6 @@ class EditProfile extends Component {
 
     mapUserDetailsToState = (credentials) => {
         this.setState({
-            name: credentials.name ? credentials.name : '',
-            surname: credentials.surname ? credentials.surname : '',
-            website: credentials.website ? credentials.website : '',
-            location: credentials.location ? credentials.location : '',
         })
     };
 

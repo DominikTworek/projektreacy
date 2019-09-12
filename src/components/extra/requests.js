@@ -1,6 +1,6 @@
 import {ACCESS_TOKEN, BASE_URL} from "./consts";
 
-const request = (method, data, url) => {
+const requests = (method, data, url) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
@@ -43,7 +43,7 @@ export function getUser() {
         return Promise.reject("No access token set.");
     }
 
-    return request({
+    return requests({
         url: BASE_URL + "/employee/me",
         method: 'GET'
     });
@@ -51,7 +51,7 @@ export function getUser() {
 
 
 export function login(data) {
-    return request(
+    return requests(
         'POST',
         data,
         BASE_URL + "/auth/login"
@@ -59,7 +59,7 @@ export function login(data) {
 }
 
 export function register(data){
-    return request(
+    return requests(
         'POST',
         data,
         BASE_URL + "/auth/signup"
@@ -67,7 +67,7 @@ export function register(data){
 }
 
 export function payment(sum) {
-    return request(
+    return requests(
         'POST',
         '',
         BASE_URL + '/paypal/make/payment?sum='+sum,
@@ -75,7 +75,7 @@ export function payment(sum) {
 }
 
 export function completePayment(paymentId, payerId) {
-    return request(
+    return requests(
         'POST',
         '',
         BASE_URL + '/paypal/complete/payment?paymentId=' + paymentId + '&PayerID=' + payerId,

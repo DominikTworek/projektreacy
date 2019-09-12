@@ -8,3 +8,5 @@ export const LOADING_UI = 'LOADING_UI';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const MESSAGE = 'MESSAGE';
 export const CLEAR_MESSAGE = 'CLEAR_MESSAGE';
+
+export const ACCESS_TOKEN = 'accessToken';

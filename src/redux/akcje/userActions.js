@@ -1,11 +1,11 @@
 import {SET_USER, SET_ERRORS, CLEAR_ERRORS, LOADING_UI, SET_UNAUTHENTICATED, LOADING_USER} from "../types";
 import axios from "axios";
+import Alert from 'react-s-alert';
 
 export const loginUser = (userData, history) => (dispatch) => {
     dispatch({type: LOADING_UI});
-    axios.post('/login', userData)
+    axios.post('/auth/login', userData)
         .then(res => {
-            setAuthorizationHeader(res.data.token);
             dispatch(getUserData());
             dispatch({type: CLEAR_ERRORS});
             history.push('/user');
@@ -39,7 +39,7 @@ export const changePassword = (userPassword, history) => (dispatch) => {
             dispatch({type: CLEAR_ERRORS});
         })
         .then ( res => {
-            localStorage.removeItem('FBIdToken');
+            localStorage.removeItem('acessToken');
             delete axios.defaults.headers.common['Authorization'];
             dispatch({type: SET_UNAUTHENTICATED});
         })
@@ -77,7 +77,7 @@ export const logoutUser = () => (dispatch) => {
 
 export const getUserData = () => (dispatch) => {
     dispatch({type: LOADING_USER});
-    axios.get('/get')
+    axios.get('/employee/me')
         .then(res => {
             dispatch({
                 type: SET_USER,

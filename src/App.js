@@ -18,9 +18,8 @@ import axios from 'axios';
 import {SET_AUTHENTICATED} from "./redux/types";
 import {logoutUser, getUserData} from "./redux/akcje/userActions";
 import Examples from "./components/Navbars/MainNavbar";
-
-axios.defaults.baseURL = 'http://localhost:5001/projekt-studia/us-central1/api';
-
+//axios.defaults.baseURL = 'http://localhost:5001/projekt-studia/us-central1/api';
+    axios.defaults.baseURL = 'http://localhost:8080';
 const token = localStorage.FBIdToken;
 if (token) {
     const decodedToken = jwtDecode(token);

@@ -81,9 +81,7 @@ class Profile extends Component {
 
     render() {
         const {
-            classes, user: {
-                credentials: {handle, createdAt, imageUrl, name, surname, website, type, location, timePremium}
-            }
+            classes
         } = this.props;
         return (
             <Card className="profile card-coin card-plain ">
@@ -93,7 +91,6 @@ class Profile extends Component {
                             <img
                                 alt="..."
                                 className="img-center img-fluid rounded-circle"
-                                src={imageUrl}
                             />
 
                             <input
@@ -110,47 +107,11 @@ class Profile extends Component {
                         <hr/>
                         <div className='profile-details'>
                             <h4 className="title">Informacje</h4>
-                            <MuiLink component={Link} to={`/users/${handle}`} color="primary" variant="h5">
-                                @{handle}
-                            </MuiLink>
                             <hr/>
-                            {name && <Typography variant="body2">{name}  </Typography>}
-                            {surname && <Typography variant="body2">{surname}</Typography>}
                             <hr/>
-                            {location && (
-                                <Fragment>
-                                    <LocationOn className="icon"/> <span>{location}</span>
-                                </Fragment>
-                            )}
-                            <hr/>
-                            {website && (
-                                <Fragment>
-                                    <LinkIcon className="icon"/> <span></span>
-                                    <a href={website} target="_blank" rel="noopener noreferrer">
-                                        {''}{website}
-                                    </a>
-                                    <hr/>
-                                </Fragment>
-                            )}
-                            {website && (
-                                <Fragment>
-                                    <TypeIcon className="icon"/> <span></span>
-                                    <a href={type} target="_blank" rel="noopener noreferrer" className="linki">
-                                        {''}{type}
-                                    </a>
-                                    <hr/>
-                                </Fragment>
-                            )}
                             <CalendarToday className="icon"/>{''}
-                            <span> Konto założone {dayjs(createdAt).format('MMM YYYY')}</span>
                             <hr/>
 
-                            {timePremium &&
-                            (
-                                <Fragment>
-                                    <CalendarToday className="icon"/>
-                                    <span> Aktywne konto premium do {dayjs(timePremium).format('DD/MM/YYYY')}</span>
-                                </Fragment>)}
                         </div>
                         <div className={classes.buttonLogOff}>
                         <Przycisk tip="Wyloguj Się" onClick={this.handleWyloguj}>
