@@ -21,6 +21,7 @@ import {ACCESS_TOKEN, FACEBOOK_AUTH_URL} from "../extra/consts";
 //import fbLogo from '../../assets/img/fb-logo.png';
 import {login} from "../extra/requests";
 import Alert from 'react-s-alert';
+import fbLogo from '../../assets/img/fb-logo.png';
 
 const styles = {
     form: {
