@@ -178,6 +178,7 @@ class Login extends Component {
                                                             <CircularProgress className={classes.ladowanie}/>
                                                         )}
                                                         <br/>
+                                                        <SocialLogin/>
                                                         <TextField
                                                             id="email"
                                                             name="email"
@@ -286,6 +287,24 @@ class Login extends Component {
                     </div>
                 </div>
             </>
+        );
+    }
+}
+
+class SocialLogin extends Component {
+
+    imgStyle = {
+        height: 30,
+        width: 30,
+        marginRight: 30
+    };
+
+    render() {
+        return (
+            <div className="social-login">
+                <a className="btn btn-block social-btn facebook" href={FACEBOOK_AUTH_URL}>
+                    <img src={fbLogo} alt="Facebook" style={this.imgStyle}/> Zaloguj się za pomocą Facebook</a>
+            </div>
         );
     }
 }
