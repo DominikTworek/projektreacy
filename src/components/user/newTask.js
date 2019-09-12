@@ -2,7 +2,7 @@ import React, {Component, Fragment} from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import {connect} from 'react-redux';
-import {editUserDetails} from "../../redux/akcje/userActions";
+import {newTask} from "../../redux/akcje/userActions";
 import {
     Button,
 } from "reactstrap";
@@ -10,8 +10,12 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import EditIcon from '@material-ui/icons/Edit';
+import EditIcon from '@material-ui/icons/Add';
+
 import Przycisk from '../../util/Buttons';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const styles = {
     TextField: {
@@ -21,7 +25,10 @@ const styles = {
             color: '#fc62e5',
         },
         '& label': {
-            color: '#fcd3fa',
+            color: '#fcd2f2',
+        },
+        '& type=[date]': {
+            visibility: 'hidden',
         },
         '& label.MuiInputLabel-filled': {
             color: '#fcd3fa',
@@ -46,12 +53,15 @@ const styles = {
     }
 };
 
-class EditProfile extends Component {
+class NewTask extends Component {
     state = {
-        name: '',
-        surname: '',
-        website: '',
-        location: '',
+        title: '',
+        start: new Date().getDate(),
+        end: new Date().getDate(),
+        client: '',
+        description: '',
+        time: 200.0,
+        startDate: new Date(),
         open: false
     };
 
@@ -71,14 +81,22 @@ class EditProfile extends Component {
         });
     };
 
+    handleData = date => {
+        this.setState({
+            startDate: date
+        });
+    };
+
     handleSubmit = () => {
-        const userDetails = {
-            name: this.state.name,
-            surname: this.state.surname,
-            website: this.state.website,
-            location: this.state.location
+        const taskDetails = {
+            title: this.state.title,
+            start: this.state.start,
+            end: this.state.end,
+            client: this.state.client,
+            description: this.state.description,
+            time: this.state.time,
         };
-        this.props.editUserDetails(userDetails);
+        this.props.newTask(taskDetails);
         this.handleClose();
     };
 
@@ -94,11 +112,10 @@ class EditProfile extends Component {
 
     render() {
         const {classes} = this.props;
-
         return (
             <Fragment>
                 <div className={classes.button} onClick={this.handleOpen}>
-                    <Przycisk tip="Edytuj Dane">
+                    <Przycisk tip="Dodaj zlecenie">
                         <EditIcon className="iconh"/>
                     </Przycisk>
                 </div>
@@ -107,17 +124,17 @@ class EditProfile extends Component {
                         maxWidth="sm"
                         fullWidth
                 >
-                    <DialogTitle className="dialog-Title">Edytuj Dane</DialogTitle>
+                    <DialogTitle className="dialog-Title">Dodaj Zlecenie</DialogTitle>
                     <dialogContent className="dialog-Content">
                         <form>
                             <TextField
-                                name="name"
-                                type="name"
-                                label="Imie"
+                                name="title"
+                                type="title"
+                                label="Tytuł"
                                 rows="3"
-                                placeholder="Twoje Imie"
+                                placeholder="Wpisz tytuł zadania"
                                 className={classes.TextField}
-                                value={this.state.name}
+                                value={this.state.title}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -128,12 +145,12 @@ class EditProfile extends Component {
                                 }}
                             />
                             <TextField
-                                name="surname"
-                                type="surname"
-                                label="Nazwisko"
-                                placeholder="Twoje Nazwisko"
+                                name="start"
+                                type="date"
+                                label="Początek Pracy"
+                                placeholder="Wpisz datę początku projektu"
                                 className={classes.TextField}
-                                value={this.state.surname}
+                                value={this.state.start}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -144,12 +161,12 @@ class EditProfile extends Component {
                                 }}
                             />
                             <TextField
-                                name="website"
-                                type="website"
-                                label="Strona"
-                                placeholder="Twoja Strona(Github)"
+                                name="end"
+                                type="date"
+                                label="Koniec Pracy"
+                                placeholder="Wpisz datę końca pracy"
                                 className={classes.TextField}
-                                value={this.state.website}
+                                value={this.state.end}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -160,12 +177,44 @@ class EditProfile extends Component {
                                 }}
                             />
                             <TextField
-                                name="location"
-                                type="location"
-                                label="Lokalizacja"
-                                placeholder="Twoja miejsce zamieszkania(lokalizacja)"
+                                name="client"
+                                type="client"
+                                label="Klient"
+                                placeholder="Wpisz Klienta"
                                 className={classes.TextField}
-                                value={this.state.location}
+                                value={this.state.client}
+                                onChange={this.handleChange}
+                                fullWidth
+                                InputProps={{
+                                    classes: {
+                                        underline: classes.underline,
+                                        input: classes.input
+                                    }
+                                }}
+                            />
+                            <TextField
+                                name="description"
+                                type="description"
+                                label="Opis"
+                                placeholder="Wpisz Opis"
+                                className={classes.TextField}
+                                value={this.state.description}
+                                onChange={this.handleChange}
+                                fullWidth
+                                InputProps={{
+                                    classes: {
+                                        underline: classes.underline,
+                                        input: classes.input
+                                    }
+                                }}
+                            />
+                            <TextField
+                                name="time"
+                                type="dd"
+                                label="Czas"
+                                placeholder=" Wpisz czas potrzebny na realizację"
+                                className={classes.TextField}
+                                value={this.state.time}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -191,8 +240,8 @@ class EditProfile extends Component {
     }
 }
 
-EditProfile.propTypes = {
-    editUserDetails: PropTypes.func.isRequired,
+NewTask.propTypes = {
+    newTask: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired
 };
 
@@ -200,4 +249,4 @@ const mapStateToProps = (state) => ({
     credentials: state.user.credentials
 });
 
-export default connect(mapStateToProps, {editUserDetails})(withStyles(styles)(EditProfile));
+export default connect(mapStateToProps, {newTask})(withStyles(styles)(NewTask));

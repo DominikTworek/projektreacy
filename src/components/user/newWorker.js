@@ -2,7 +2,7 @@ import React, {Component, Fragment} from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import {connect} from 'react-redux';
-import {editUserDetails} from "../../redux/akcje/userActions";
+import {addDetails} from "../../redux/akcje/userActions";
 import {
     Button,
 } from "reactstrap";
@@ -48,13 +48,16 @@ const styles = {
 };
 
 class EditProfile extends Component {
-    state = {
+    state = (credentials) => ({
+        id: '',
         name: '',
-        surname: '',
-        website: '',
-        location: '',
+        email: '',
+        salary: '',
+        hireFrom: '',
+        expLevel: '',
+        provider: '',
         open: false
-    };
+    });
 
     handleOpen = () => {
         this.setState({open: true});
@@ -74,17 +77,28 @@ class EditProfile extends Component {
 
     handleSubmit = () => {
         const userDetails = {
+            id: this.state.id,
             name: this.state.name,
-            surname: this.state.surname,
-            website: this.state.website,
-            location: this.state.location
+            email: this.state.email,
+            provider: this.state.provider,
+            salary: this.state.salary,
+            hireFrom: this.state.hireFrom,
+            expLevel: this.state.expLevel,
         };
-        this.props.editUserDetails(userDetails);
+        console.log(userDetails);
+        this.props.addDetails(userDetails);
         this.handleClose();
     };
 
     mapUserDetailsToState = (credentials) => {
         this.setState({
+            id: credentials.id ? credentials.id : '',
+            name: credentials.name ? credentials.name : '',
+            email: credentials.email ? credentials.email : '',
+            salary: credentials.salary ? credentials.salary : '',
+            hireFrom: credentials.hireFrom ? credentials.hireFrom : '',
+            expLevel: credentials.expLevel ? credentials.expLevel : '',
+            provider: credentials.provider ? credentials.provider : '',
         })
     };
 
@@ -111,13 +125,13 @@ class EditProfile extends Component {
                     <dialogContent className="dialog-Content">
                         <form>
                             <TextField
-                                name="email"
-                                type="email"
-                                label="Email"
+                                name="salary"
+                                type="salary"
+                                label="Pensja"
                                 rows="3"
-                                placeholder="Email Pracownika"
+                                placeholder="Pensja Pracownika"
                                 className={classes.TextField}
-                                value={this.state.email}
+                                value={this.state.salary}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -128,28 +142,12 @@ class EditProfile extends Component {
                                 }}
                             />
                             <TextField
-                                name="name"
-                                type="name"
-                                label="Nick"
-                                placeholder="Nick Pracownika"
+                                name="hireFrom"
+                                type="hireFrom"
+                                label="Zatrudniony od"
+                                placeholder="Wpisz od kiedy zatrudniony"
                                 className={classes.TextField}
-                                value={this.state.name}
-                                onChange={this.handleChange}
-                                fullWidth
-                                InputProps={{
-                                    classes: {
-                                        underline: classes.underline,
-                                        input: classes.input
-                                    }
-                                }}
-                            />
-                            <TextField
-                                name="password"
-                                type="password"
-                                label="Hasło"
-                                placeholder="Hasło Pracownika"
-                                className={classes.TextField}
-                                value={this.state.password}
+                                value={this.state.hireFrom}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -165,7 +163,7 @@ class EditProfile extends Component {
                                 label="Doświadczenie"
                                 placeholder="Doświadczenie Pracownika"
                                 className={classes.TextField}
-                                value={this.state.location}
+                                value={this.state.expLevel}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -192,12 +190,12 @@ class EditProfile extends Component {
 }
 
 EditProfile.propTypes = {
-    editUserDetails: PropTypes.func.isRequired,
+    addDetails: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
-    credentials: state.user.credentials
+    credentials: state.user,
 });
 
-export default connect(mapStateToProps, {editUserDetails})(withStyles(styles)(EditProfile));
+export default connect(mapStateToProps, {addDetails})(withStyles(styles)(EditProfile));

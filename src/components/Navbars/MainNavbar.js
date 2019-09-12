@@ -20,7 +20,8 @@ import userIcon from '@material-ui/icons/SupervisedUserCircle'
 import withStyles from "@material-ui/core/styles/withStyles";
 import EditPassword from "../user/editPassword";
 import NewWorker from "../user/newWorker";
-import Payment from "../user/payment";
+import NewTask from "../user/newTask";
+import Payment from "../user/newPayment";
 
 const styles = {
     'icon': {
@@ -138,10 +139,9 @@ class MainNavbar extends Component {
                                         </div>
                                     </NavItem>
                                     <NavItem>
-                                        <Przycisk tip="Dodaj zlecenie">
-                                            <AddIcon className="iconh">
-                                            </AddIcon>
-                                        </Przycisk>
+                                        <div className="iconh">
+                                            <NewTask/>
+                                        </div>
                                     </NavItem>
                                     <NavItem>
                                         <Przycisk tip="Powiadomienia">

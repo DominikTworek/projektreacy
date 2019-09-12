@@ -24,10 +24,8 @@ export const signUpUser = (newUserData, history) => (dispatch) => {
     dispatch({type: LOADING_UI});
     axios.post('http://localhost:8080/auth/signup', newUserData)
         .then(res => {
-            setAuthorizationHeader(res.data.accessToken);
-            dispatch(getUserData());
             dispatch({type: CLEAR_ERRORS});
-            history.push('/user');
+            history.push('/login');
         })
         .catch(err => {
             dispatch({
@@ -103,6 +101,24 @@ export const uploadImage = (formData) => (dispatch) =>{
 export const editUserDetails = (userDetails) => (dispatch => {
     dispatch({type: LOADING_USER});
     axios.post('/user/edit', userDetails)
+        .then(() => {
+            dispatch(getUserData())
+        }).catch((err => console.log(err)));
+
+});
+
+export const addDetails = (userDetails) => (dispatch => {
+    dispatch({type: LOADING_USER});
+    axios.post('http://localhost:8080/employee/save', userDetails)
+        .then(() => {
+            dispatch(getUserData())
+        }).catch((err => console.log(err)));
+
+});
+
+export const newTask = (taskDetails) => (dispatch => {
+    dispatch({type: LOADING_USER});
+    axios.post('http://localhost:8080/task/save', taskDetails)
         .then(() => {
             dispatch(getUserData())
         }).catch((err => console.log(err)));

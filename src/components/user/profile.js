@@ -7,7 +7,7 @@ import React, {Component, Fragment} from "react";
 import dayjs from "dayjs";
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
-import TypeIcon from '@material-ui/icons/MonetizationOn'
+import TypeIcon from '@material-ui/icons/MonetizationOn';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import {connect} from "react-redux";
@@ -81,7 +81,7 @@ class Profile extends Component {
 
     render() {
         const {
-            classes, user: {name, email, imageUrl}
+            classes, user: {name, email, imageUrl, salary, hireFrom}
         } = this.props;
         return (
             <Card className="profile card-coin card-plain ">
@@ -120,8 +120,18 @@ class Profile extends Component {
                             {name && <Typography variant="body2">{name}  </Typography>}
                             <hr/>
                             {email && <Typography variant="body2">{email}  </Typography>}
-                            <CalendarToday className="icon"/>{''}
                             <hr/>
+                            {salary &&(
+                            <Fragment>
+                            <TypeIcon className="icon"/>
+                                <span> Pensja - {salary}zł</span>
+                        </Fragment>)}
+                        <hr/>
+                            {hireFrom &&(
+                                <Fragment>
+                                    <CalendarToday className="icon"/>
+                                    <span> Zatrudniony {hireFrom}</span>
+                                </Fragment>)}
 
                         </div>
                         <div className={classes.buttonLogOff}>

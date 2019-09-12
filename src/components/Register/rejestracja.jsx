@@ -70,10 +70,10 @@ class Rejestracja extends Component {
     constructor() {
         super();
         this.state = {
+            name: '',
             email: '',
             password: '',
             confirmPassword: '',
-            name: '',
             errors: {}
         }
     }
@@ -131,7 +131,7 @@ class Rejestracja extends Component {
         const newUser = {
             email: this.state.email,
             password: this.state.password,
-            user: this.state.user
+            name: this.state.name
         };
         this.props.signUpUser(newUser, this.props.history);
     };
@@ -235,7 +235,7 @@ class Rejestracja extends Component {
                                                         <TextField
                                                             id="name"
                                                             name="name"
-                                                            type="name"
+                                                            type="handle"
                                                             label="Nick"
                                                             className={classes.textField}
                                                             value={this.state.name}
