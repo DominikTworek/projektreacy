@@ -10,7 +10,7 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import EditIcon from '@material-ui/icons/Edit';
+import EditIcon from '@material-ui/icons/SupervisedUserCircle';
 
 import Przycisk from '../../util/Buttons';
 
@@ -98,7 +98,7 @@ class EditProfile extends Component {
         return (
             <Fragment>
                 <div className={classes.button} onClick={this.handleOpen}>
-                    <Przycisk tip="Edytuj Dane">
+                    <Przycisk tip="Dodaj użytkownika">
                         <EditIcon className="iconh"/>
                     </Przycisk>
                 </div>
@@ -111,11 +111,27 @@ class EditProfile extends Component {
                     <dialogContent className="dialog-Content">
                         <form>
                             <TextField
+                                name="email"
+                                type="email"
+                                label="Email"
+                                rows="3"
+                                placeholder="Email Pracownika"
+                                className={classes.TextField}
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                fullWidth
+                                InputProps={{
+                                    classes: {
+                                        underline: classes.underline,
+                                        input: classes.input
+                                    }
+                                }}
+                            />
+                            <TextField
                                 name="name"
                                 type="name"
-                                label="Imie"
-                                rows="3"
-                                placeholder="Twoje Imie"
+                                label="Nick"
+                                placeholder="Nick Pracownika"
                                 className={classes.TextField}
                                 value={this.state.name}
                                 onChange={this.handleChange}
@@ -128,12 +144,12 @@ class EditProfile extends Component {
                                 }}
                             />
                             <TextField
-                                name="surname"
-                                type="surname"
-                                label="Nazwisko"
-                                placeholder="Twoje Nazwisko"
+                                name="password"
+                                type="password"
+                                label="Hasło"
+                                placeholder="Hasło Pracownika"
                                 className={classes.TextField}
-                                value={this.state.surname}
+                                value={this.state.password}
                                 onChange={this.handleChange}
                                 fullWidth
                                 InputProps={{
@@ -144,26 +160,10 @@ class EditProfile extends Component {
                                 }}
                             />
                             <TextField
-                                name="website"
-                                type="website"
-                                label="Strona"
-                                placeholder="Twoja Strona(Github)"
-                                className={classes.TextField}
-                                value={this.state.website}
-                                onChange={this.handleChange}
-                                fullWidth
-                                InputProps={{
-                                    classes: {
-                                        underline: classes.underline,
-                                        input: classes.input
-                                    }
-                                }}
-                            />
-                            <TextField
-                                name="location"
-                                type="location"
-                                label="Lokalizacja"
-                                placeholder="Twoja miejsce zamieszkania(lokalizacja)"
+                                name="expLevel"
+                                type="expLevel"
+                                label="Doświadczenie"
+                                placeholder="Doświadczenie Pracownika"
                                 className={classes.TextField}
                                 value={this.state.location}
                                 onChange={this.handleChange}

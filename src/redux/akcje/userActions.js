@@ -20,6 +20,23 @@ export const loginUser = (userData, history) => (dispatch) => {
         });
 };
 
+export const signUpUser = (newUserData, history) => (dispatch) => {
+    dispatch({type: LOADING_USER});
+    axios.post('http://localhost:8080/auth/signup', newUserData)
+        .then(res => {
+            setAuthorizationHeader(res.data.accessToken);
+            dispatch(getUserData());
+            dispatch({type: CLEAR_ERRORS});
+            history.push('/user');
+        })
+        .catch(err => {
+            dispatch({
+                type: SET_ERRORS,
+                payload: err.response.data
+            })
+        });
+};
+
 export const forgetPassword = (userEmail) => (dispatch) => {
     dispatch({type: LOADING_UI});
     axios.post('/forget', userEmail)
@@ -54,22 +71,7 @@ export const changePassword = (userPassword, history) => (dispatch) => {
 };
 
 
-export const signUpUser = (newUserData, history) => (dispatch) => {
-    dispatch({type: LOADING_USER});
-    axios.post('/signup', newUserData)
-        .then(res => {
-            setAuthorizationHeader(res.data.token);
-            dispatch(getUserData());
-            dispatch({type: CLEAR_ERRORS});
-            history.push('/user');
-        })
-        .catch(err => {
-            dispatch({
-                type: SET_ERRORS,
-                payload: err.response.data
-            })
-        });
-};
+
 
 export const logoutUser = () => (dispatch) => {
     localStorage.removeItem('FBIdToken');

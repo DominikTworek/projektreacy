@@ -19,7 +19,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import userIcon from '@material-ui/icons/SupervisedUserCircle'
 import withStyles from "@material-ui/core/styles/withStyles";
 import EditPassword from "../user/editPassword";
-import newWorker from "../user/newWorker";
+import NewWorker from "../user/newWorker";
 import Payment from "../user/payment";
 
 const styles = {
@@ -134,7 +134,7 @@ class MainNavbar extends Component {
                                 <Fragment>
                                     <NavItem>
                                         <div className="iconh">
-                                            <newWorker/>
+                                            <NewWorker/>
                                         </div>
                                     </NavItem>
                                     <NavItem>
