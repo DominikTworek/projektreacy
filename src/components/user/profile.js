@@ -81,17 +81,26 @@ class Profile extends Component {
 
     render() {
         const {
-            classes
+            classes, user: {name, email, imageUrl}
         } = this.props;
         return (
             <Card className="profile card-coin card-plain ">
                 <CardHeader>
                     <div className={classes.profilee}>
                         <div className="image-wrapper">
+                            {imageUrl ?(
                             <img
                                 alt="..."
                                 className="img-center img-fluid rounded-circle"
+                                src="http://techfi.in/wp-content/uploads/2019/07/user.png"
                             />
+                            ) : (
+                            <img
+                                alt="..."
+                                className="img-center img-fluid rounded-circle"
+                                src="http://techfi.in/wp-content/uploads/2019/07/user.png"
+                            />
+                            )}
 
                             <input
                                 type="file"
@@ -108,7 +117,9 @@ class Profile extends Component {
                         <div className='profile-details'>
                             <h4 className="title">Informacje</h4>
                             <hr/>
+                            {name && <Typography variant="body2">{name}  </Typography>}
                             <hr/>
+                            {email && <Typography variant="body2">{email}  </Typography>}
                             <CalendarToday className="icon"/>{''}
                             <hr/>
 

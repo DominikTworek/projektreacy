@@ -125,6 +125,6 @@ export const paymentPro = () => (dispatch => {
 
 const setAuthorizationHeader = (token) => {
     const FBIdToken = `Bearer ${token}`;
-    localStorage.setItem(ACCESS_TOKEN, FBIdToken);
+    localStorage.setItem('FBIdToken', FBIdToken);
     axios.defaults.headers.common['Authorization'] = FBIdToken;
 };
